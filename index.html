@@ -85,6 +85,49 @@
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
+
+        /* Form styling */
+        .form-input {
+            transition: all 0.2s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            ring: 2px solid #3b82f6;
+        }
+
+        /* Password modal */
+        .password-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+        }
+        .password-modal-content {
+            max-width: 400px;
+            width: 90%;
+        }
+        .password-input {
+            transition: all 0.3s ease;
+        }
+        .password-input:focus {
+            outline: none;
+            ring: 2px solid #3b82f6;
+            border-color: transparent;
+        }
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-10px); }
+            40% { transform: translateX(10px); }
+            60% { transform: translateX(-10px); }
+            80% { transform: translateX(10px); }
+        }
     </style>
 </head>
 <body class="text-gray-800 pb-24 md:pb-0 overflow-x-hidden">
@@ -107,7 +150,7 @@
     <nav class="glass-nav-top shadow-sm sticky top-0 z-50 hidden md:block">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-extrabold flex items-center gap-2">
-                <span class="text-blue-700">Teach</span><span class="text-red-500">N</span><span class="text-emerald-500">write</span>
+                <span class="text-blue-700">teach</span><span class="text-red-500">N</span><span class="text-emerald-500">write</span>
                 <svg class="w-6 h-6 text-blue-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8c-2.2 0-4 1.8-4 4 0 2.2 1.8 4 4 4s4-1.8 4-4c0-2.2-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
             </h1>
             <div class="flex space-x-8 items-center">
@@ -122,6 +165,13 @@
                 <button onclick="showSection('profile')" class="nav-link font-kristen text-xl" id="nav-profile">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"></path></svg>
                     Profile
+                </button>
+                <!-- Menu Tambah Artikel - Khusus Admin -->
+                <button onclick="showAddArticle()" class="nav-link font-kristen text-xl text-emerald-600 hover:text-emerald-800" id="nav-add">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                    </svg>
+                    + Artikel
                 </button>
             </div>
         </div>
@@ -142,6 +192,12 @@
                 <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"></path></svg>
                 <span class="text-xs font-kristen">Profile</span>
             </button>
+            <button onclick="showAddArticle()" class="flex flex-col items-center mob-inactive text-emerald-600" id="mob-add">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                </svg>
+                <span class="text-xs font-kristen">+ Artikel</span>
+            </button>
         </div>
     </nav>
 
@@ -151,8 +207,8 @@
         <section id="home" class="animate-fade">
             <div class="glass-card rounded-[2rem] overflow-hidden flex flex-col md:flex-row relative">
                 <div class="p-8 md:w-1/2 flex flex-col justify-center text-dark-purple relative">
-                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Selamat Datang di TeachNwrite</h2>
-                    <p class="text-slate-600 opacity-90 mb-6">Platform modern untuk para guru dalam berbagi ilmu dan menuangkan ide melalui tulisan.</p>
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Welcome to teachNwrite</h2>
+                    <p class="text-slate-600 opacity-90 mb-6">A digital Platform for Teaching and Writing - Teaching Mind, Writing Worlds.</p>
                     <button onclick="showSection('articles')" class="bg-emerald-500 text-white font-bold py-3 px-6 rounded-full w-fit hover:bg-emerald-600 transition shadow-lg flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path></svg>
                         Jelajahi Artikel
@@ -170,11 +226,74 @@
                 <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path></svg>
                 Artikel Terbaru
             </h2>
+            
+            <!-- DAFTAR ARTIKEL -->
             <div id="articles-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="text-center text-gray-500 col-span-3 py-10">
                     <div class="spinner"></div>
                     <p>Memuat artikel...</p>
                 </div>
+            </div>
+        </section>
+
+        <!-- ADD ARTICLE SECTION (Khusus Admin) -->
+        <section id="add-article-section" class="hidden-section animate-fade">
+            <h2 class="text-3xl font-kristen text-dark-purple mb-6 flex items-center gap-3">
+                <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                </svg>
+                Tambah Artikel Baru
+            </h2>
+            
+            <div class="glass-card p-6 md:p-8 rounded-3xl">
+                <form id="add-article-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Judul *</label>
+                        <input type="text" id="article-title" required 
+                               class="form-input w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Konten *</label>
+                        <textarea id="article-content" rows="6" required 
+                                  class="form-input w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Penulis *</label>
+                        <input type="text" id="article-author" required 
+                               class="form-input w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">URL Gambar (Opsional)</label>
+                        <input type="url" id="article-image" 
+                               placeholder="https://images.unsplash.com/photo-xxx" 
+                               class="form-input w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                        <select id="article-status" 
+                                class="form-input w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="published">Published</option>
+                            <option value="draft">Draft</option>
+                        </select>
+                    </div>
+                    <div class="flex gap-3">
+                        <button type="submit" 
+                                class="bg-emerald-600 text-white font-bold py-3 px-8 rounded-xl hover:bg-emerald-700 transition shadow-lg flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                            </svg>
+                            Publikasikan Artikel
+                        </button>
+                        <button type="reset" 
+                                class="bg-gray-300 text-gray-700 font-bold py-3 px-8 rounded-xl hover:bg-gray-400 transition">
+                            Reset
+                        </button>
+                        <button type="button" onclick="showSection('articles')" 
+                                class="bg-blue-600 text-white font-bold py-3 px-8 rounded-xl hover:bg-blue-700 transition">
+                            Lihat Artikel
+                        </button>
+                    </div>
+                </form>
             </div>
         </section>
 
@@ -194,82 +313,74 @@
 
     </main>
 
+    <!-- Password Modal -->
+    <div id="password-modal" class="password-modal hidden">
+        <div class="password-modal-content glass-card p-8 rounded-3xl relative">
+            <button onclick="closePasswordModal()" 
+                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-dark-purple">Verifikasi Admin</h3>
+                <p class="text-sm text-gray-500">Masukkan password untuk menambah artikel</p>
+            </div>
+            
+            <form id="password-form" onsubmit="verifyPassword(event)">
+                <div class="mb-4">
+                    <input type="password" id="password-input" 
+                           placeholder="Masukkan password..." 
+                           class="password-input w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                           autofocus>
+                    <div id="password-error" class="text-red-500 text-sm mt-1 hidden">❌ Password salah! Silakan coba lagi.</div>
+                </div>
+                <button type="submit" 
+                        class="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition shadow-lg flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    Verifikasi
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script>
     // ==============================================
     // KONFIGURASI - GANTI URL DEPLOY LO DI SINI!
     // ==============================================
     const CONFIG = {
         // 🔥 GANTI URL INI dengan Web App URL dari Google Apps Script!
-        API_URL: 'https://script.google.com/macros/s/AKfycbwMkbkEi-asq1LNjDh2jknIYih_aOs3ufr3hqHzb-t3h3RIgV7lQPmMrgGS3klX3qcA/exec',
+        API_URL: 'https://script.google.com/macros/s/AKfycbxIv_YJslYCfRXvQLvQJxGRrKloEU5Dp1aYW3SzAgv2aTShkC71Ny62yv954KJl1VtBzw/exec',
         
         // Kalo true pake data contoh, kalo false pake API
-        USE_DUMMY: true // Set false kalo udah deploy API
+        USE_DUMMY: false, // ← Ubah ke false untuk pakai API
+        
+        // Password admin
+        ADMIN_PASSWORD: 'd4Rm@01'
     };
 
     // ==============================================
-    // DATA DUMMY (Contoh)
+    // DATA DUMMY (Contoh) - Untuk fallback
     // ==============================================
     const DUMMY_DATA = {
-        articles: [
-            {
-                id: 1,
-                title: "Pembelajaran Interaktif di Era Digital",
-                content: "Pendidikan di era digital menuntut guru untuk lebih kreatif dalam menyampaikan materi. Penggunaan teknologi seperti AI dan gamifikasi dapat meningkatkan minat belajar siswa. Artikel ini membahas strategi-strategi efektif yang bisa diterapkan di kelas.\n\nBeberapa metode yang bisa diterapkan:\n1. Gamifikasi dalam pembelajaran\n2. Penggunaan AI untuk personalisasi belajar\n3. Project-based learning dengan teknologi",
-                author: "Budi Santoso",
-                date: "2026-07-04",
-                image_url: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-                status: "published"
-            },
-            {
-                id: 2,
-                title: "Menulis Kreatif untuk Anak Usia Dini",
-                content: "Menulis bukan hanya tentang teknis, tapi juga tentang mengekspresikan diri. Untuk anak usia dini, pendekatan yang menyenangkan sangat penting. Gunakan media gambar, cerita bergambar, dan permainan kata untuk merangsang kreativitas mereka.\n\nTips praktis:\n• Mulai dengan menulis kata sederhana\n• Gunakan gambar sebagai inspirasi\n• Buat story telling session",
-                author: "Siti Rahayu",
-                date: "2026-07-03",
-                image_url: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80",
-                status: "published"
-            },
-            {
-                id: 3,
-                title: "Metode Belajar Aktif untuk Siswa Modern",
-                content: "Metode belajar aktif seperti problem-based learning dan project-based learning terbukti efektif meningkatkan pemahaman siswa. Artikel ini membahas implementasi metode-metode tersebut di kelas dengan studi kasus nyata.\n\nManfaat metode belajar aktif:\n• Meningkatkan critical thinking\n• Mengembangkan kolaborasi\n• Pembelajaran lebih bermakna",
-                author: "Dr. Ahmad Fauzi",
-                date: "2026-07-02",
-                image_url: "https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=800&q=80",
-                status: "published"
-            },
-            {
-                id: 4,
-                title: "Membangun Karakter Anak Melalui Pendidikan",
-                content: "Pendidikan karakter menjadi fondasi penting dalam membentuk generasi penerus bangsa. Artikel ini mengupas berbagai pendekatan untuk membangun karakter positif pada anak sejak dini.\n\nNilai-nilai yang perlu ditanamkan:\n• Kejujuran\n• Tanggung jawab\n• Empati\n• Kerja sama",
-                author: "Dr. Maria Wati",
-                date: "2026-07-01",
-                image_url: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=800&q=80",
-                status: "published"
-            },
-            {
-                id: 5,
-                title: "Teknologi dalam Pembelajaran Matematika",
-                content: "Matematika sering dianggap sulit, namun dengan bantuan teknologi, pembelajaran bisa menjadi lebih menyenangkan dan mudah dipahami.\n\nAplikasi yang direkomendasikan:\n• GeoGebra untuk geometri\n• Photomath untuk pemecahan soal\n• Desmos untuk grafik",
-                author: "Rudi Hartono",
-                date: "2026-06-30",
-                image_url: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&q=80",
-                status: "draft"
-            }
-        ],
-        profile: {
-            id: 1,
-            name: "Dr. Ahmad Fauzi, M.Pd.",
-            bio: "Guru dan penulis dengan pengalaman lebih dari 15 tahun di bidang pendidikan. Berkomitmen untuk menciptakan metode pembelajaran yang inovatif dan menyenangkan bagi siswa. Aktif sebagai pembicara di berbagai seminar pendidikan nasional dan internasional. Percaya bahwa setiap anak memiliki potensi luar biasa yang perlu dikembangkan dengan pendekatan yang tepat.",
-            photo_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-            expertise: "Pendidikan Dasar, Inovasi Pembelajaran, Pengembangan Kurikulum, Literasi Digital",
-            social_links: {
-                instagram: "@ahmadfauzi",
-                linkedin: "ahmad-fauzi",
-                youtube: "TeachNwrite"
-            }
-        }
+        articles: [],
+        profile: {}
     };
+
+    // ==============================================
+    // STATE - Menyimpan data terakhir
+    // ==============================================
+    let currentArticles = [];
+    let currentProfile = null;
+    let isAdminAuthenticated = false;
 
     // ==============================================
     // FUNGSI NAVIGASI
@@ -314,6 +425,62 @@
     }
 
     // ==============================================
+    // FUNGSI PASSWORD MODAL
+    // ==============================================
+    function showAddArticle() {
+        if (isAdminAuthenticated) {
+            // Langsung tampilkan form tambah artikel
+            showSection('add-article-section');
+            return;
+        }
+        
+        // Tampilkan modal password
+        const modal = document.getElementById('password-modal');
+        modal.classList.remove('hidden');
+        document.getElementById('password-input').value = '';
+        document.getElementById('password-input').focus();
+        document.getElementById('password-error').classList.add('hidden');
+        document.getElementById('password-input').classList.remove('shake');
+    }
+
+    function closePasswordModal() {
+        document.getElementById('password-modal').classList.add('hidden');
+    }
+
+    function verifyPassword(event) {
+        event.preventDefault();
+        
+        const input = document.getElementById('password-input');
+        const error = document.getElementById('password-error');
+        const password = input.value.trim();
+        
+        if (password === CONFIG.ADMIN_PASSWORD) {
+            isAdminAuthenticated = true;
+            closePasswordModal();
+            showSection('add-article-section');
+            // Reset input
+            input.value = '';
+            error.classList.add('hidden');
+        } else {
+            // Tampilkan error dengan animasi shake
+            error.classList.remove('hidden');
+            input.classList.add('shake');
+            setTimeout(() => {
+                input.classList.remove('shake');
+            }, 500);
+            input.value = '';
+            input.focus();
+        }
+    }
+
+    // Close modal dengan tombol ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closePasswordModal();
+        }
+    });
+
+    // ==============================================
     // AMBIL DATA DARI API / DUMMY
     // ==============================================
     async function fetchData() {
@@ -334,6 +501,13 @@
             console.log('✅ Data berhasil diambil:', result);
             
             if (result.status === 'success') {
+                // Simpan ke state
+                if (result.data.articles) {
+                    currentArticles = result.data.articles;
+                }
+                if (result.data.profile) {
+                    currentProfile = result.data.profile;
+                }
                 return result.data;
             } else {
                 throw new Error(result.message || 'Gagal mengambil data');
@@ -341,8 +515,59 @@
             
         } catch (error) {
             console.error('❌ Error fetchData:', error);
-            console.log('⚠️ Fallback ke data dummy...');
-            return DUMMY_DATA;
+            console.log('⚠️ Menggunakan data dari state sebelumnya');
+            // Kembalikan data dari state kalo ada
+            return {
+                articles: currentArticles.length > 0 ? currentArticles : DUMMY_DATA.articles,
+                profile: currentProfile || DUMMY_DATA.profile
+            };
+        }
+    }
+
+    // ==============================================
+    // TAMBAH ARTIKEL VIA API
+    // ==============================================
+    async function addArticleToAPI(formData) {
+        try {
+            if (CONFIG.USE_DUMMY) {
+                console.log('📦 Mode dummy: Artikel ditambahkan ke data dummy');
+                const newArticle = {
+                    id: Date.now(),
+                    title: formData.title,
+                    content: formData.content,
+                    author: formData.author,
+                    date: new Date().toISOString().split('T')[0],
+                    image_url: formData.image_url || '',
+                    status: formData.status || 'published'
+                };
+                // Tambahkan ke state
+                currentArticles.unshift(newArticle);
+                return { success: true, data: newArticle };
+            }
+            
+            console.log('🌐 Menambahkan artikel ke API...');
+            const response = await fetch(CONFIG.API_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    action: 'addArticle',
+                    title: formData.title,
+                    content: formData.content,
+                    author: formData.author,
+                    image_url: formData.image_url || '',
+                    status: formData.status || 'published'
+                })
+            });
+            
+            console.log('✅ Artikel berhasil ditambahkan!');
+            return { success: true };
+            
+        } catch (error) {
+            console.error('❌ Error add article:', error);
+            return { success: false, error: error.message };
         }
     }
 
@@ -352,7 +577,14 @@
     function renderArticles(articles) {
         const container = document.getElementById('articles-container');
         
-        if (!articles || articles.length === 0) {
+        // Simpan ke state
+        if (articles) {
+            currentArticles = articles;
+        }
+        
+        const dataToRender = articles || currentArticles;
+        
+        if (!dataToRender || dataToRender.length === 0) {
             container.innerHTML = `
                 <div class="text-center text-gray-500 col-span-3 py-10">
                     <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -366,7 +598,7 @@
         }
         
         // Filter hanya yang statusnya published
-        const publishedArticles = articles.filter(a => 
+        const publishedArticles = dataToRender.filter(a => 
             a.status && a.status.toLowerCase() === 'published'
         );
         
@@ -381,7 +613,7 @@
         
         // Render artikel
         let html = '';
-        publishedArticles.forEach(article => {
+        publishedArticles.forEach((article, index) => {
             // Truncate content
             const maxLength = 150;
             let content = article.content || '';
@@ -404,6 +636,9 @@
                 }
             }
             
+            // Gunakan ID atau index sebagai fallback
+            const articleId = article.id || index;
+            
             html += `
                 <div class="glass-card rounded-2xl overflow-hidden article-card">
                     <img src="${article.image_url || 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80'}" 
@@ -424,7 +659,7 @@
                         </div>
                         <h3 class="text-xl font-bold text-dark-purple mb-2 line-clamp-2">${article.title}</h3>
                         <p class="text-gray-600 text-sm line-clamp-3 mb-4">${content}</p>
-                        <button onclick="showArticleDetail(${article.id})" 
+                        <button onclick="showArticleDetail(${articleId})" 
                                 class="text-emerald-600 font-semibold hover:text-emerald-700 transition flex items-center gap-1">
                             Baca Selengkapnya
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -445,7 +680,13 @@
     function renderProfile(profile) {
         const container = document.getElementById('profile-container');
         
-        if (!profile || Object.keys(profile).length === 0) {
+        if (profile) {
+            currentProfile = profile;
+        }
+        
+        const dataToRender = profile || currentProfile;
+        
+        if (!dataToRender || Object.keys(dataToRender).length === 0) {
             container.innerHTML = `
                 <div class="text-center text-gray-500 py-10 w-full">
                     <p class="text-lg">Profil belum tersedia</p>
@@ -455,7 +696,7 @@
         }
         
         // Parse social links
-        let socialLinks = profile.social_links;
+        let socialLinks = dataToRender.social_links;
         if (typeof socialLinks === 'string') {
             try {
                 socialLinks = JSON.parse(socialLinks);
@@ -466,21 +707,21 @@
         
         const html = `
             <div class="flex-shrink-0">
-                <img src="${profile.photo_url || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80'}" 
-                     alt="${profile.name}" 
+                <img src="${dataToRender.photo_url || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80'}" 
+                     alt="${dataToRender.name}" 
                      class="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover border-4 border-emerald-400 shadow-xl"
                      onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80'">
             </div>
             <div class="flex-1 text-center md:text-left">
-                <h3 class="text-2xl md:text-3xl font-bold text-dark-purple mb-2">${profile.name}</h3>
-                ${profile.expertise ? `
+                <h3 class="text-2xl md:text-3xl font-bold text-dark-purple mb-2">${dataToRender.name}</h3>
+                ${dataToRender.expertise ? `
                     <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-3">
-                        ${profile.expertise.split(',').map(skill => `
+                        ${dataToRender.expertise.split(',').map(skill => `
                             <span class="bg-emerald-100 text-emerald-700 text-xs px-3 py-1 rounded-full">${skill.trim()}</span>
                         `).join('')}
                     </div>
                 ` : ''}
-                <p class="text-gray-600 leading-relaxed">${profile.bio || 'Tidak ada bio'}</p>
+                <p class="text-gray-600 leading-relaxed">${dataToRender.bio || 'Tidak ada bio'}</p>
                 ${socialLinks && Object.keys(socialLinks).length > 0 ? `
                     <div class="flex gap-4 mt-4 justify-center md:justify-start">
                         ${socialLinks.instagram ? `
@@ -522,13 +763,17 @@
     // SHOW ARTICLE DETAIL (Popup/Modal)
     // ==============================================
     function showArticleDetail(articleId) {
-        // Ambil dari data yang sudah di-render atau dari dummy
-        const container = document.getElementById('articles-container');
-        const articles = DUMMY_DATA.articles; // Ambil dari dummy
+        // Cari artikel dari state currentArticles
+        let article = currentArticles.find(a => a.id === articleId);
         
-        const article = articles.find(a => a.id === articleId);
+        // Kalo gak ketemu, coba dari semua data (termasuk draft)
         if (!article) {
-            alert('Artikel tidak ditemukan!');
+            article = DUMMY_DATA.articles.find(a => a.id === articleId);
+        }
+        
+        if (!article) {
+            alert('⚠️ Artikel tidak ditemukan!');
+            console.log('Article ID:', articleId, 'Available articles:', currentArticles);
             return;
         }
         
@@ -550,13 +795,15 @@
                     month: 'long',
                     year: 'numeric'
                 });
-            } catch (e) {}
+            } catch (e) {
+                date = article.date || 'Tanggal tidak tersedia';
+            }
         }
         
         modal.innerHTML = `
             <div class="glass-card max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 rounded-3xl relative animate-fade">
                 <button onclick="document.getElementById('article-modal').remove()" 
-                        class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition">
+                        class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition bg-white/80 rounded-full p-1">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
@@ -571,7 +818,7 @@
                     <span>📅 ${date || 'Tanggal tidak tersedia'}</span>
                 </div>
                 <h2 class="text-2xl md:text-3xl font-bold text-dark-purple mb-4">${article.title}</h2>
-                <div class="text-gray-700 leading-relaxed whitespace-pre-line">${article.content}</div>
+                <div class="text-gray-700 leading-relaxed whitespace-pre-line">${article.content || 'Konten tidak tersedia'}</div>
                 <div class="mt-6 flex justify-end">
                     <span class="bg-emerald-100 text-emerald-700 text-xs px-3 py-1 rounded-full">${article.status || 'draft'}</span>
                 </div>
@@ -587,6 +834,58 @@
     async function init() {
         console.log('🚀 TeachNwrite CMS - Loading...');
         console.log(`📌 Mode: ${CONFIG.USE_DUMMY ? 'DUMMY' : 'API'}`);
+        
+        // Setup form submit untuk tambah artikel
+        const form = document.getElementById('add-article-form');
+        if (form) {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = {
+                    title: document.getElementById('article-title').value.trim(),
+                    content: document.getElementById('article-content').value.trim(),
+                    author: document.getElementById('article-author').value.trim(),
+                    image_url: document.getElementById('article-image').value.trim(),
+                    status: document.getElementById('article-status').value
+                };
+                
+                // Validasi
+                if (!formData.title || !formData.content || !formData.author) {
+                    alert('⚠️ Mohon isi semua field yang wajib (Judul, Konten, Penulis)!');
+                    return;
+                }
+                
+                // Tampilkan loading
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = `
+                    <svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                    Menyimpan...
+                `;
+                submitBtn.disabled = true;
+                
+                // Kirim ke API
+                const result = await addArticleToAPI(formData);
+                
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                if (result.success) {
+                    alert('✅ Artikel berhasil ditambahkan!');
+                    form.reset();
+                    // Reload data dari server
+                    const data = await fetchData();
+                    renderArticles(data.articles);
+                    // Arahkan ke halaman artikel
+                    showSection('articles');
+                } else {
+                    alert('❌ Gagal menambahkan artikel: ' + (result.error || 'Unknown error'));
+                }
+            });
+        }
         
         // Ambil data
         const data = await fetchData();
@@ -604,6 +903,8 @@
         showSection('home');
         
         console.log('✅ TeachNwrite siap!');
+        console.log('📊 Total artikel:', currentArticles.length);
+        console.log('🔐 Admin password: d4Rm@01');
     }
 
     // ==============================================
@@ -611,6 +912,9 @@
     // ==============================================
     window.showSection = showSection;
     window.showArticleDetail = showArticleDetail;
+    window.showAddArticle = showAddArticle;
+    window.closePasswordModal = closePasswordModal;
+    window.verifyPassword = verifyPassword;
 
     // Jalankan init saat DOM siap
     document.addEventListener('DOMContentLoaded', init);
