@@ -3,16 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Blog edukasi Bahasa Inggris untuk siswa SMP dan guru. Berisi materi, tips belajar, dan refleksi mengajar.">
+<meta name="description" content="Blog edukasi Bahasa Inggris untuk siswa SMP dan guru.">
 <meta name="theme-color" content="#0f766e">
 <title>teachNwrite — Blog Bahasa Inggris</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-/* ============ RESET ============ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 img,picture,video,canvas,svg{display:block;max-width:100%;height:auto}
@@ -20,21 +18,16 @@ input,button,textarea,select{font:inherit;color:inherit}
 button{background:none;border:none;cursor:pointer}
 a{color:inherit;text-decoration:none}
 ul,ol{list-style:none}
-
-/* ============ VARIABLES ============ */
 :root{
   --bg:#fafaf9;--surface:#fff;--surface-2:#f5f5f4;
   --primary:#0f766e;--primary-hover:#115e59;--primary-light:#ccfbf1;
   --accent:#f59e0b;--accent-hover:#d97706;--accent-light:#fef3c7;
   --text:#1e293b;--text-soft:#475569;--muted:#64748b;
   --border:#e2e8f0;--danger:#dc2626;--success:#16a34a;
-  --font-heading:'Plus Jakarta Sans',sans-serif;
-  --font-body:'Inter',sans-serif;
+  --font-heading:'Plus Jakarta Sans',sans-serif;--font-body:'Inter',sans-serif;
   --radius-sm:8px;--radius:12px;--radius-md:16px;--radius-lg:24px;--radius-full:9999px;
-  --shadow-sm:0 1px 2px rgba(15,118,110,.05);
-  --shadow:0 4px 12px rgba(15,118,110,.08);
-  --shadow-md:0 8px 24px rgba(15,118,110,.12);
-  --shadow-lg:0 16px 48px rgba(15,118,110,.16);
+  --shadow-sm:0 1px 2px rgba(15,118,110,.05);--shadow:0 4px 12px rgba(15,118,110,.08);
+  --shadow-md:0 8px 24px rgba(15,118,110,.12);--shadow-lg:0 16px 48px rgba(15,118,110,.16);
   --container:1200px;--header-height:72px;--transition:200ms ease;
 }
 [data-theme="dark"]{
@@ -43,12 +36,8 @@ ul,ol{list-style:none}
   --accent:#fbbf24;--accent-hover:#fcd34d;--accent-light:#78350f;
   --text:#f1f5f9;--text-soft:#cbd5e1;--muted:#94a3b8;
   --border:#334155;--danger:#f87171;--success:#4ade80;
-  --shadow:0 4px 12px rgba(0,0,0,.4);
-  --shadow-md:0 8px 24px rgba(0,0,0,.5);
-  --shadow-lg:0 16px 48px rgba(0,0,0,.6);
+  --shadow:0 4px 12px rgba(0,0,0,.4);--shadow-md:0 8px 24px rgba(0,0,0,.5);--shadow-lg:0 16px 48px rgba(0,0,0,.6);
 }
-
-/* ============ BASE ============ */
 body{font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--text);background:var(--bg);min-height:100vh;transition:background-color var(--transition),color var(--transition);-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;line-height:1.25;color:var(--text)}
 h1{font-size:2.25rem}h2{font-size:1.75rem}h3{font-size:1.375rem}h4{font-size:1.125rem}
@@ -58,8 +47,6 @@ p{color:var(--text-soft)}
 ::-webkit-scrollbar-track{background:var(--surface-2)}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:var(--radius-full)}
 ::-webkit-scrollbar-thumb:hover{background:var(--muted)}
-
-/* ============ LAYOUT ============ */
 .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 1.5rem}
 .main{min-height:calc(100vh - var(--header-height) - 300px);padding:2rem 0 4rem}
 .page{animation:fadeIn .4s ease}
@@ -68,8 +55,6 @@ p{color:var(--text-soft)}
 .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
 .section-title{font-size:1.75rem;font-family:var(--font-heading);font-weight:800;color:var(--text);display:flex;align-items:center;gap:.5rem}
 .section-subtitle{color:var(--muted);font-size:.95rem;margin-top:.25rem}
-
-/* ============ HEADER ============ */
 .header{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);transition:box-shadow var(--transition)}
 .header.scrolled{box-shadow:var(--shadow)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:var(--header-height);gap:1rem}
@@ -93,10 +78,8 @@ p{color:var(--text-soft)}
 .icon-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-sm);color:var(--text-soft);transition:all var(--transition);flex-shrink:0}
 .icon-btn:hover{background:var(--surface-2);color:var(--primary)}
 .icon-btn svg{width:20px;height:20px}
-[data-theme="dark"] .icon-sun{display:block}
-[data-theme="dark"] .icon-moon{display:none}
+[data-theme="dark"] .icon-sun{display:block}[data-theme="dark"] .icon-moon{display:none}
 .icon-sun{display:none}.icon-moon{display:block}
-
 .search-bar{max-height:0;overflow:hidden;border-top:1px solid transparent;background:var(--surface);transition:max-height .3s ease,border-color .3s ease}
 .search-bar.open{max-height:100px;border-top-color:var(--border)}
 .search-input-wrap{position:relative;padding:1rem 0;display:flex;align-items:center}
@@ -106,7 +89,6 @@ p{color:var(--text-soft)}
 .search-close{position:absolute;right:1rem;width:32px;height:32px;border-radius:var(--radius-sm);color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all var(--transition)}
 .search-close:hover{background:var(--surface-2);color:var(--text)}
 .search-close svg{width:18px;height:18px}
-
 .mobile-only{display:none}
 .mobile-menu{display:none;flex-direction:column;padding:.5rem 1.5rem 1rem;border-top:1px solid var(--border);background:var(--surface);max-height:calc(100vh - var(--header-height));overflow-y:auto}
 .mobile-menu.open{display:flex}
@@ -120,8 +102,6 @@ p{color:var(--text-soft)}
 .mobile-menu-group.open .mobile-menu-submenu{display:flex}
 .mobile-menu-submenu a{padding:.6rem 0;color:var(--muted);font-size:.9rem}
 .mobile-menu-highlight{color:var(--accent)!important;font-weight:600}
-
-/* ============ BUTTONS ============ */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1.5rem;font-family:var(--font-heading);font-weight:600;font-size:.95rem;border-radius:var(--radius);transition:all var(--transition);cursor:pointer;border:1px solid transparent;white-space:nowrap;text-align:center}
 .btn:disabled{opacity:.6;cursor:not-allowed}
 .btn-primary{background:var(--primary);color:#fff}
@@ -136,8 +116,6 @@ p{color:var(--text-soft)}
 .btn-sm{padding:.5rem .875rem;font-size:.85rem}
 .btn-lg{padding:1rem 2rem;font-size:1rem}
 .btn-block{width:100%}
-
-/* ============ CARDS ============ */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;transition:all var(--transition)}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--primary)}
 .article-card{display:flex;flex-direction:column;height:100%;cursor:pointer}
@@ -154,8 +132,6 @@ p{color:var(--text-soft)}
 .article-read-more{display:inline-flex;align-items:center;gap:.25rem;color:var(--primary);font-weight:600;font-size:.9rem;transition:gap var(--transition);align-self:flex-start}
 .article-card:hover .article-read-more{gap:.5rem}
 .article-read-more svg{width:16px;height:16px}
-
-/* ============ HERO ============ */
 .hero{padding:3rem 0 4rem}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 .hero-content{max-width:560px}
@@ -166,23 +142,16 @@ p{color:var(--text-soft)}
 .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}
 .hero-image{display:flex;justify-content:center;align-items:center}
 .hero-image-wrapper{position:relative;width:100%;max-width:480px;aspect-ratio:1;border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--primary-light) 0%,var(--accent-light) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:var(--shadow-lg);font-size:8rem}
-
-/* ============ MATERI GRID ============ */
 .materi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
 .materi-card{padding:1.5rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);text-align:center;transition:all var(--transition);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.5rem}
 .materi-card:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:var(--shadow-md)}
 .materi-card-icon{font-size:2rem;margin-bottom:.25rem}
 .materi-card-title{font-weight:700;font-family:var(--font-heading);color:var(--text);font-size:.95rem}
-.materi-card-count{font-size:.8rem;color:var(--muted)}
-
-/* ============ ARTICLES ============ */
 .filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
 .filter-chip{padding:.5rem 1rem;border-radius:var(--radius-full);background:var(--surface);border:1px solid var(--border);color:var(--text-soft);font-size:.85rem;font-weight:500;transition:all var(--transition);cursor:pointer}
 .filter-chip:hover{border-color:var(--primary);color:var(--primary)}
 .filter-chip.active{background:var(--primary);border-color:var(--primary);color:#fff}
 .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
-
-/* ============ ARTICLE PAGE ============ */
 .article-page{max-width:760px;margin:0 auto}
 .article-page-header{margin-bottom:2rem}
 .article-page-category{display:inline-block;background:var(--primary-light);color:var(--primary);font-size:.8rem;font-weight:600;padding:.375rem .875rem;border-radius:var(--radius-full);margin-bottom:1rem;text-transform:capitalize}
@@ -190,7 +159,6 @@ p{color:var(--text-soft)}
 .article-page-meta{display:flex;align-items:center;gap:1rem;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
 .article-page-cover{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-md);margin-bottom:2rem}
 .article-page-content{font-size:1.05rem;line-height:1.8;color:var(--text-soft);white-space:pre-line}
-.article-page-content p{margin-bottom:1.25rem}
 .article-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin:2rem 0}
 .article-tag{background:var(--surface-2);color:var(--muted);padding:.25rem .75rem;border-radius:var(--radius-full);font-size:.8rem;font-weight:500}
 .share-section{margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)}
@@ -204,11 +172,8 @@ p{color:var(--text-soft)}
 .share-btn.instagram:hover{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;border-color:#dc2743}
 .share-btn.tiktok:hover{background:#000;color:#fff;border-color:#000}
 .share-btn.copy:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
-
 .reading-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--primary),var(--accent));z-index:999;transition:width .1s ease;display:none}
 .reading-progress.active{display:block}
-
-/* ============ SKELETON ============ */
 .skeleton{background:linear-gradient(90deg,var(--surface-2) 25%,var(--border) 50%,var(--surface-2) 75%);background-size:200% 100%;animation:skeleton-loading 1.5s infinite;border-radius:var(--radius-sm)}
 @keyframes skeleton-loading{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .skeleton-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}
@@ -217,14 +182,10 @@ p{color:var(--text-soft)}
 .skeleton-line{height:12px;margin-bottom:.75rem}
 .skeleton-line.short{width:40%}
 .skeleton-line.medium{width:70%}
-
-/* ============ EMPTY ============ */
 .empty-state{text-align:center;padding:4rem 1rem;grid-column:1/-1}
 .empty-state-icon{font-size:3rem;margin-bottom:1rem;opacity:.5}
 .empty-state-title{font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:.5rem}
 .empty-state-text{color:var(--muted);margin-bottom:1.5rem}
-
-/* ============ MATERI PAGE ============ */
 .materi-page-header{padding:2rem 0 1rem;margin-bottom:1rem}
 .materi-page-title{font-size:clamp(1.5rem,4vw,2.25rem);font-weight:800;margin-bottom:.5rem;color:var(--text)}
 .materi-page-desc{color:var(--muted);font-size:1rem;max-width:640px}
@@ -238,8 +199,6 @@ p{color:var(--text-soft)}
 .resource-link-icon{color:var(--muted);flex-shrink:0;transition:color var(--transition)}
 .resource-card:hover .resource-link-icon{color:var(--primary)}
 .resource-link-icon svg{width:20px;height:20px}
-
-/* ============ MY APPS ============ */
 .apps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
 .app-card{padding:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);transition:all var(--transition);display:flex;flex-direction:column;gap:.75rem}
 .app-card:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:var(--shadow-md)}
@@ -253,8 +212,6 @@ p{color:var(--text-soft)}
 .app-status.coming-soon{background:#e0e7ff;color:#3730a3}
 .app-link{color:var(--primary);font-weight:600;font-size:.85rem;display:inline-flex;align-items:center;gap:.25rem}
 .app-link svg{width:14px;height:14px}
-
-/* ============ ABOUT ============ */
 .about-grid{display:grid;grid-template-columns:300px 1fr;gap:3rem;align-items:start}
 .about-photo{width:100%;aspect-ratio:1;border-radius:var(--radius-lg);object-fit:cover;box-shadow:var(--shadow-md);border:4px solid var(--surface)}
 .about-content h1{font-size:2rem;margin-bottom:.5rem}
@@ -264,9 +221,6 @@ p{color:var(--text-soft)}
 .about-social{display:flex;gap:.75rem;flex-wrap:wrap}
 .social-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.625rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);color:var(--text-soft);font-weight:500;font-size:.9rem;transition:all var(--transition)}
 .social-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--primary);color:var(--primary)}
-.social-btn svg{width:18px;height:18px}
-
-/* ============ CONTACT ============ */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
 .contact-info h2{margin-bottom:1rem}
 .contact-info p{margin-bottom:1.5rem;line-height:1.7}
@@ -275,8 +229,6 @@ p{color:var(--text-soft)}
 .contact-method-icon svg{width:20px;height:20px}
 .contact-method-body h4{font-size:.9rem;margin-bottom:.125rem}
 .contact-method-body p{font-size:.85rem;color:var(--muted);margin:0}
-
-/* ============ FORMS ============ */
 .form-group{margin-bottom:1.25rem}
 .form-group label{display:block;font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.5rem}
 .form-group input,.form-group textarea,.form-group select{width:100%;padding:.75rem 1rem;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--text);font-size:.95rem;transition:all var(--transition)}
@@ -284,15 +236,11 @@ p{color:var(--text-soft)}
 .form-group textarea{resize:vertical;min-height:120px;font-family:inherit}
 .form-hint{font-size:.8rem;color:var(--muted);margin-top:.25rem}
 .form-error{color:var(--danger);font-size:.85rem;margin-bottom:1rem;padding:.75rem 1rem;background:rgba(220,38,38,.1);border-radius:var(--radius);border-left:3px solid var(--danger)}
-.form-success{color:var(--success);font-size:.85rem;margin-bottom:1rem;padding:.75rem 1rem;background:rgba(22,163,74,.1);border-radius:var(--radius);border-left:3px solid var(--success)}
-
-/* ============ MODAL ============ */
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:1rem;animation:fadeIn .2s ease}
 .modal.open{display:flex}
 .modal-content{background:var(--surface);border-radius:var(--radius-lg);width:100%;max-width:600px;max-height:90vh;overflow-y:auto;padding:2rem;position:relative;animation:modalSlide .3s ease;box-shadow:var(--shadow-lg)}
 @keyframes modalSlide{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 .modal-sm{max-width:440px}
-.modal-lg{max-width:800px}
 .modal-close{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-radius:var(--radius-sm);color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all var(--transition)}
 .modal-close:hover{background:var(--surface-2);color:var(--text)}
 .modal-close svg{width:20px;height:20px}
@@ -301,27 +249,19 @@ p{color:var(--text-soft)}
 .modal-icon svg{width:28px;height:28px}
 .modal-header h3{font-size:1.25rem;margin-bottom:.25rem}
 .modal-header p{font-size:.9rem;color:var(--muted)}
-
-/* ============ TOAST ============ */
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--text);color:var(--bg);padding:.875rem 1.5rem;border-radius:var(--radius);box-shadow:var(--shadow-lg);font-weight:500;font-size:.9rem;z-index:300;opacity:0;transition:all .3s ease;max-width:90vw;display:flex;align-items:center;gap:.5rem}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast.success{background:var(--success);color:#fff}
 .toast.error{background:var(--danger);color:#fff}
 .toast.info{background:var(--primary);color:#fff}
-
-/* ============ LOADING ============ */
 .loading-overlay{position:fixed;inset:0;background:var(--bg);z-index:500;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;transition:opacity .3s ease,visibility .3s ease}
 .loading-overlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-/* ============ BACK TO TOP ============ */
 .back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);opacity:0;visibility:hidden;transition:all var(--transition);z-index:90}
 .back-to-top.show{opacity:1;visibility:visible}
 .back-to-top:hover{background:var(--primary-hover);transform:translateY(-4px)}
 .back-to-top svg{width:20px;height:20px}
-
-/* ============ FOOTER ============ */
 .footer{background:var(--surface);border-top:1px solid var(--border);padding:3rem 0 1.5rem;margin-top:4rem}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
 .footer-col h4{font-size:.95rem;font-family:var(--font-heading);margin-bottom:1rem;color:var(--text)}
@@ -333,8 +273,6 @@ p{color:var(--text-soft)}
 .footer-social-links a:hover{background:var(--primary-light);color:var(--primary)}
 .footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.85rem;color:var(--muted)}
 .footer-credit{font-size:.8rem}
-
-/* ============ ADMIN PANEL ============ */
 .admin-tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;border-bottom:1px solid var(--border);flex-wrap:wrap;padding-bottom:.5rem}
 .admin-tab{padding:.5rem 1rem;border-radius:var(--radius-sm);font-weight:600;font-size:.9rem;color:var(--text-soft);transition:all var(--transition);cursor:pointer}
 .admin-tab:hover{background:var(--surface-2);color:var(--primary)}
@@ -352,8 +290,7 @@ p{color:var(--text-soft)}
 .status-badge{display:inline-block;font-size:.7rem;font-weight:600;padding:.2rem .5rem;border-radius:var(--radius-full);text-transform:uppercase}
 .status-published{background:#dcfce7;color:#166534}
 .status-draft{background:#fef3c7;color:#92400e}
-
-/* ============ RESPONSIVE ============ */
+.profile-photo-preview{width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid var(--border);background:var(--surface-2)}
 @media (max-width:1024px){
   .hero-grid{grid-template-columns:1fr;gap:2rem}
   .hero-image{order:-1}
@@ -373,7 +310,6 @@ p{color:var(--text-soft)}
   .section-title{font-size:1.35rem}
   .articles-grid{grid-template-columns:1fr}
   .materi-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.75rem}
-  .materi-card{padding:1.25rem .75rem}
   .apps-grid{grid-template-columns:1fr}
   .hero{padding:2rem 0 3rem}
   .hero-title{font-size:1.85rem}
@@ -397,13 +333,11 @@ p{color:var(--text-soft)}
 </head>
 <body>
 
-<!-- LOADING -->
 <div id="loading-overlay" class="loading-overlay">
   <div class="spinner"></div>
   <p>Memuat...</p>
 </div>
 
-<!-- HEADER -->
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="#/" class="logo">
@@ -520,7 +454,6 @@ p{color:var(--text-soft)}
 <button class="back-to-top" id="back-to-top"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg></button>
 <div id="toast" class="toast"></div>
 
-<!-- LOGIN MODAL -->
 <div class="modal" id="login-modal">
   <div class="modal-content modal-sm">
     <button class="modal-close" data-close-modal="login-modal"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
@@ -544,1162 +477,794 @@ p{color:var(--text-soft)}
   </div>
 </div>
 
-<!-- ============================================
-     SCRIPT (semua digabung dalam 1 modul)
-     ============================================ -->
 <script type="module">
 
-/* ============================================
-   CONFIG
-   ============================================ */
 const CONFIG = {
   SUPABASE_URL: 'https://ennrdavvcdpxyjbjibtk.supabase.co',
-  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVubnJkYXZ2Y2RweHlqYmppYnRrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE2MDA4NDYsImV4cCI6MjEwNzE3Njg0Nn0.0EZXSS3_nFa8A9gE80W38tZ_wThTgeBOpiyf6jIbTdg'
+  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVubnJkYXZ2Y2RweHlqYmppYnRrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE2MDA4NDYsImV4cCI6MjEwNzE3Njg0Nn0.0EZXSS3_nFa8A9gE80W38tZ_wThTgeBOpiyf6jIbTdg',
+  ADMIN_UID: '4332c006-5019-4b0e-b1a3-cf7a5aea6e1c'
 };
 
-/* ============================================
-   UTILS
-   ============================================ */
-const $ = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+const $ = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
-function slugify(str) {
-  return String(str).toLowerCase().trim()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-');
+function slugify(s){return String(s).toLowerCase().trim().replace(/[^\w\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-');}
+function escapeHtml(s){if(s==null)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');}
+function formatDate(d){if(!d)return'';try{return new Date(d).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});}catch{return d;}}
+function readTime(t){const w=String(t||'').trim().split(/\s+/).length;return Math.max(1,Math.ceil(w/200));}
+
+function showToast(msg,type='info',dur=3000){
+  const t=$('#toast');t.textContent=msg;t.className=`toast ${type} show`;
+  clearTimeout(showToast._t);showToast._t=setTimeout(()=>t.classList.remove('show'),dur);
 }
 
-function escapeHtml(str) {
-  if (str == null) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
-}
-
-function formatDate(dateStr) {
-  if (!dateStr) return '';
-  try {
-    return new Date(dateStr).toLocaleDateString('id-ID', {
-      day: 'numeric', month: 'long', year: 'numeric'
-    });
-  } catch { return dateStr; }
-}
-
-function readTime(text) {
-  const words = String(text || '').trim().split(/\s+/).length;
-  return Math.max(1, Math.ceil(words / 200));
-}
-
-function showToast(msg, type = 'info', duration = 3000) {
-  const t = $('#toast');
-  t.textContent = msg;
-  t.className = `toast ${type} show`;
-  clearTimeout(showToast._t);
-  showToast._t = setTimeout(() => t.classList.remove('show'), duration);
-}
-
-/* ============================================
-   SUPABASE CLIENT (REST fetch, tanpa SDK)
-   ============================================ */
-const sb = {
-  url: CONFIG.SUPABASE_URL,
-  key: CONFIG.SUPABASE_ANON_KEY,
-  session: null,
-
-  headers() {
-    const h = {
-      'apikey': this.key,
-      'Content-Type': 'application/json'
-    };
-    if (this.session?.access_token) {
-      h['Authorization'] = `Bearer ${this.session.access_token}`;
-    } else {
-      h['Authorization'] = `Bearer ${this.key}`;
-    }
+const sb={
+  url:CONFIG.SUPABASE_URL,key:CONFIG.SUPABASE_ANON_KEY,session:null,
+  headers(){
+    const h={'apikey':this.key,'Content-Type':'application/json'};
+    h['Authorization']=`Bearer ${this.session?.access_token||this.key}`;
     return h;
   },
-
-  async request(path, opts = {}) {
-    const url = `${this.url}${path}`;
-    const res = await fetch(url, {
-      ...opts,
-      headers: { ...this.headers(), ...(opts.headers || {}) }
-    });
-    const text = await res.text();
-    let data = null;
-    try { data = text ? JSON.parse(text) : null; } catch { data = text; }
-    if (!res.ok) {
-      const msg = data?.message || data?.error_description || data?.error || `HTTP ${res.status}`;
-      throw new Error(msg);
-    }
+  async request(path,opts={}){
+    const res=await fetch(`${this.url}${path}`,{...opts,headers:{...this.headers(),...(opts.headers||{})}});
+    const text=await res.text();
+    let data=null;try{data=text?JSON.parse(text):null;}catch{data=text;}
+    if(!res.ok){const msg=data?.message||data?.error_description||data?.error||`HTTP ${res.status}`;throw new Error(msg);}
     return data;
   },
-
-  async select(table, params = {}) {
-    const qs = new URLSearchParams(params).toString();
-    return this.request(`/rest/v1/${table}${qs ? '?' + qs : ''}`);
+  async select(table,params={}){
+    const qs=new URLSearchParams(params).toString();
+    return this.request(`/rest/v1/${table}${qs?'?'+qs:''}`);
   },
-
-  async insert(table, rows) {
-    return this.request(`/rest/v1/${table}`, {
-      method: 'POST',
-      headers: { 'Prefer': 'return=representation' },
-      body: JSON.stringify(rows)
+  async insert(table,rows){return this.request(`/rest/v1/${table}`,{method:'POST',headers:{'Prefer':'return=representation'},body:JSON.stringify(rows)});},
+  async update(table,filter,patch){const qs=new URLSearchParams(filter).toString();return this.request(`/rest/v1/${table}?${qs}`,{method:'PATCH',headers:{'Prefer':'return=representation'},body:JSON.stringify(patch)});},
+  async remove(table,filter){const qs=new URLSearchParams(filter).toString();return this.request(`/rest/v1/${table}?${qs}`,{method:'DELETE'});},
+  async signIn(email,password){
+    const res=await fetch(`${this.url}/auth/v1/token?grant_type=password`,{
+      method:'POST',headers:{'apikey':this.key,'Content-Type':'application/json'},
+      body:JSON.stringify({email,password})
     });
-  },
-
-  async update(table, filter, patch) {
-    const qs = new URLSearchParams(filter).toString();
-    return this.request(`/rest/v1/${table}?${qs}`, {
-      method: 'PATCH',
-      headers: { 'Prefer': 'return=representation' },
-      body: JSON.stringify(patch)
-    });
-  },
-
-  async remove(table, filter) {
-    const qs = new URLSearchParams(filter).toString();
-    return this.request(`/rest/v1/${table}?${qs}`, { method: 'DELETE' });
-  },
-
-  async signIn(email, password) {
-    const res = await fetch(`${this.url}/auth/v1/token?grant_type=password`, {
-      method: 'POST',
-      headers: { 'apikey': this.key, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error_description || data.msg || 'Login gagal');
-    this.session = data;
-    sessionStorage.setItem('tn_session', JSON.stringify(data));
+    const data=await res.json();
+    if(!res.ok)throw new Error(data.error_description||data.msg||'Login gagal');
+    this.session=data;sessionStorage.setItem('tn_session',JSON.stringify(data));
     return data;
   },
-
-  signOut() {
-    this.session = null;
-    sessionStorage.removeItem('tn_session');
-  },
-
-  restoreSession() {
-    try {
-      const s = sessionStorage.getItem('tn_session');
-      if (s) this.session = JSON.parse(s);
-    } catch {}
-    return this.session;
-  }
+  signOut(){this.session=null;sessionStorage.removeItem('tn_session');},
+  restoreSession(){try{const s=sessionStorage.getItem('tn_session');if(s)this.session=JSON.parse(s);}catch{}return this.session;}
 };
 
-/* ============================================
-   API
-   ============================================ */
-const api = {
-  async getArticles({ category, search, limit } = {}) {
-    const params = {
-      select: '*',
-      status: 'eq.published',
-      order: 'published_at.desc.nullslast,created_at.desc'
-    };
-    if (category && category !== 'all') params.category = `eq.${category}`;
-    if (limit) params.limit = limit;
-    let rows = await sb.select('articles', params);
-    if (search) {
-      const q = search.toLowerCase();
-      rows = rows.filter(a =>
-        (a.title || '').toLowerCase().includes(q) ||
-        (a.excerpt || '').toLowerCase().includes(q) ||
-        (a.content || '').toLowerCase().includes(q)
-      );
-    }
+const api={
+  async getArticles({category,search,limit}={}){
+    const p={select:'*',status:'eq.published',order:'published_at.desc.nullslast,created_at.desc'};
+    if(category&&category!=='all')p.category=`eq.${category}`;
+    if(limit)p.limit=limit;
+    let rows=await sb.select('articles',p);
+    if(search){const q=search.toLowerCase();rows=rows.filter(a=>(a.title||'').toLowerCase().includes(q)||(a.excerpt||'').toLowerCase().includes(q)||(a.content||'').toLowerCase().includes(q));}
     return rows;
   },
-
-  async getArticleBySlug(slug) {
-    const rows = await sb.select('articles', { select: '*', slug: `eq.${slug}`, limit: 1 });
-    return rows?.[0] || null;
-  },
-
-  async getAllArticles() {
-    return sb.select('articles', { select: '*', order: 'created_at.desc' });
-  },
-
-  async createArticle(data) {
-    return sb.insert('articles', [data]);
-  },
-
-  async updateArticle(id, data) {
-    return sb.update('articles', { id: `eq.${id}` }, data);
-  },
-
-  async deleteArticle(id) {
-    return sb.remove('articles', { id: `eq.${id}` });
-  },
-
-  async getProfile() {
-    const rows = await sb.select('profile', { select: '*', limit: 1 });
-    return rows?.[0] || null;
-  },
-
-  async getResources(submenu) {
-    const params = { select: '*', order: 'order.asc' };
-    if (submenu) params.submenu = `eq.${submenu}`;
-    return sb.select('resources', params);
-  },
-
-  async createResource(data) {
-    return sb.insert('resources', [data]);
-  },
-
-  async deleteResource(id) {
-    return sb.remove('resources', { id: `eq.${id}` });
-  },
-
-  async getMyApps() {
-    return sb.select('my_apps', { select: '*', order: 'order.asc' });
-  },
-
-  async createApp(data) {
-    return sb.insert('my_apps', [data]);
-  },
-
-  async deleteApp(id) {
-    return sb.remove('my_apps', { id: `eq.${id}` });
+  async getArticleBySlug(slug){const r=await sb.select('articles',{select:'*',slug:`eq.${slug}`,limit:1});return r?.[0]||null;},
+  async getAllArticles(){return sb.select('articles',{select:'*',order:'created_at.desc'});},
+  async createArticle(d){return sb.insert('articles',[d]);},
+  async updateArticle(id,d){return sb.update('articles',{id:`eq.${id}`},d);},
+  async deleteArticle(id){return sb.remove('articles',{id:`eq.${id}`});},
+  async getProfile(){const r=await sb.select('profile',{select:'*',limit:1});return r?.[0]||null;},
+  async updateProfile(id,d){return sb.update('profile',{id:`eq.${id}`},d);},
+  async getResources(submenu){const p={select:'*',order:'order.asc'};if(submenu)p.submenu=`eq.${submenu}`;return sb.select('resources',p);},
+  async createResource(d){return sb.insert('resources',[d]);},
+  async deleteResource(id){return sb.remove('resources',{id:`eq.${id}`});},
+  async getMyApps(){return sb.select('my_apps',{select:'*',order:'order.asc'});},
+  async createApp(d){return sb.insert('my_apps',[d]);},
+  async deleteApp(id){return sb.remove('my_apps',{id:`eq.${id}`});},
+  
+  // Upload gambar ke Supabase Storage
+  async uploadImage(file, bucket = 'article-images') {
+    const ext = file.name.split('.').pop().toLowerCase();
+    const filename = `${Date.now()}-${Math.random().toString(36).slice(2,8)}.${ext}`;
+    const url = `${sb.url}/storage/v1/object/${bucket}/${filename}`;
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'apikey': sb.key,
+        'Authorization': `Bearer ${sb.session?.access_token || sb.key}`,
+        'Content-Type': file.type || 'application/octet-stream',
+        'x-upsert': 'true'
+      },
+      body: file
+    });
+    if (!res.ok) {
+      const err = await res.text();
+      throw new Error('Upload gagal: ' + err);
+    }
+    return `${sb.url}/storage/v1/object/public/${bucket}/${filename}`;
   }
 };
 
-/* ============================================
-   STATE
-   ============================================ */
-const state = {
-  articles: [],
-  profile: null,
-  resources: [],
-  apps: [],
-  route: '/',
-  searchQuery: '',
-  categoryFilter: 'all'
+const state={articles:[],profile:null,resources:[],apps:[],route:'/',searchQuery:'',categoryFilter:'all'};
+
+const MATERI_META={
+  grammar:{icon:'📖',title:'Grammar',desc:'Tenses, articles, prepositions, dan struktur kalimat Bahasa Inggris.'},
+  vocabulary:{icon:'📝',title:'Vocabulary',desc:'Kosakata tematik untuk memperkaya Bahasa Inggris kamu.'},
+  listening:{icon:'🎧',title:'Listening',desc:'Latihan mendengar dari berbagai sumber terpercaya.'},
+  speaking:{icon:'🗣️',title:'Speaking',desc:'Latihan pronunciation dan percakapan sehari-hari.'},
+  reading:{icon:'📚',title:'Reading',desc:'Teks pendek dan latihan pemahaman membaca.'},
+  writing:{icon:'✍️',title:'Writing',desc:'Menulis paragraf, email, dan teks deskriptif.'},
+  games:{icon:'🎮',title:'Games & Quiz',desc:'Belajar Bahasa Inggris sambil bermain.'},
+  apps:{icon:'📱',title:'Apps Rekomendasi',desc:'Aplikasi pilihan untuk belajar Bahasa Inggris.'}
 };
 
-/* ============================================
-   MATERI META
-   ============================================ */
-const MATERI_META = {
-  grammar:    { icon: '📖', title: 'Grammar',          desc: 'Tenses, articles, prepositions, dan struktur kalimat Bahasa Inggris.' },
-  vocabulary: { icon: '📝', title: 'Vocabulary',       desc: 'Kosakata tematik untuk memperkaya Bahasa Inggris kamu.' },
-  listening:  { icon: '🎧', title: 'Listening',        desc: 'Latihan mendengar dari berbagai sumber terpercaya.' },
-  speaking:   { icon: '🗣️', title: 'Speaking',         desc: 'Latihan pronunciation dan percakapan sehari-hari.' },
-  reading:    { icon: '📚', title: 'Reading',          desc: 'Teks pendek dan latihan pemahaman membaca.' },
-  writing:    { icon: '✍️', title: 'Writing',          desc: 'Menulis paragraf, email, dan teks deskriptif.' },
-  games:      { icon: '🎮', title: 'Games & Quiz',     desc: 'Belajar Bahasa Inggris sambil bermain.' },
-  apps:       { icon: '📱', title: 'Apps Rekomendasi', desc: 'Aplikasi pilihan untuk belajar Bahasa Inggris.' }
-};
-
-/* ============================================
-   COMPONENTS
-   ============================================ */
-function articleCard(a) {
-  const excerpt = a.excerpt || (a.content || '').slice(0, 150) + '...';
-  return `
-    <article class="article-card card" onclick="location.hash='#/artikel/${a.slug}'">
-      <div class="article-card-image">
-        <img src="${escapeHtml(a.cover_url || 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80')}" alt="${escapeHtml(a.title)}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80'">
-        <span class="article-category">${escapeHtml(a.category || '')}</span>
+function articleCard(a){
+  const ex=a.excerpt||(a.content||'').slice(0,150)+'...';
+  return `<article class="article-card card" onclick="location.hash='#/artikel/${a.slug}'">
+    <div class="article-card-image">
+      <img src="${escapeHtml(a.cover_url||'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80')}" alt="${escapeHtml(a.title)}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80'">
+      <span class="article-category">${escapeHtml(a.category||'')}</span>
+    </div>
+    <div class="article-card-body">
+      <div class="article-meta">
+        <span>✍️ ${escapeHtml(a.author_name||'Darmawati')}</span>
+        <span class="article-meta-dot"></span>
+        <span>📅 ${formatDate(a.published_at||a.created_at)}</span>
+        <span class="article-meta-dot"></span>
+        <span>⏱️ ${a.read_time||readTime(a.content)} menit</span>
       </div>
-      <div class="article-card-body">
-        <div class="article-meta">
-          <span>✍️ ${escapeHtml(a.author_name || 'Darmawati')}</span>
-          <span class="article-meta-dot"></span>
-          <span>📅 ${formatDate(a.published_at || a.created_at)}</span>
-          <span class="article-meta-dot"></span>
-          <span>⏱️ ${a.read_time || readTime(a.content)} menit</span>
-        </div>
-        <h3 class="article-title">${escapeHtml(a.title)}</h3>
-        <p class="article-excerpt">${escapeHtml(excerpt)}</p>
-        <span class="article-read-more">Baca selengkapnya <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
-      </div>
-    </article>`;
+      <h3 class="article-title">${escapeHtml(a.title)}</h3>
+      <p class="article-excerpt">${escapeHtml(ex)}</p>
+      <span class="article-read-more">Baca selengkapnya <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+    </div>
+  </article>`;
 }
 
-function skeletonCard() {
-  return `<div class="skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton-body"><div class="skeleton skeleton-line short"></div><div class="skeleton skeleton-line medium"></div><div class="skeleton skeleton-line full"></div><div class="skeleton skeleton-line full"></div></div></div>`;
-}
-
-function emptyState(icon, title, text) {
+function emptyState(icon,title,text){
   return `<div class="empty-state"><div class="empty-state-icon">${icon}</div><h3 class="empty-state-title">${title}</h3><p class="empty-state-text">${text}</p></div>`;
 }
 
-/* ============================================
-   PAGES
-   ============================================ */
-function pageHome() {
-  const latest = state.articles.slice(0, 3);
-  const materiKeys = Object.keys(MATERI_META).slice(0, 4);
-  return `
-    <section class="page">
-      <div class="hero">
-        <div class="container">
-          <div class="hero-grid">
-            <div class="hero-content">
-              <span class="hero-badge">✨ Blog Edukasi Bahasa Inggris</span>
-              <h1 class="hero-title">Belajar Bahasa Inggris Itu <span class="highlight">Menyenangkan</span></h1>
-              <p class="hero-tagline">A digital Platform for Teaching and Writing — Teaching Mind, Writing Worlds.</p>
-              <div class="hero-actions">
-                <a href="#/artikel" class="btn btn-primary btn-lg">📚 Jelajahi Artikel</a>
-                <a href="#/materi/grammar" class="btn btn-outline btn-lg">🎓 Lihat Materi</a>
-              </div>
-            </div>
-            <div class="hero-image">
-              <div class="hero-image-wrapper">📖</div>
-            </div>
-          </div>
+function pageHome(){
+  const latest=state.articles.slice(0,3);
+  const mk=Object.keys(MATERI_META).slice(0,4);
+  return `<section class="page">
+    <div class="hero"><div class="container"><div class="hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge">✨ Blog Edukasi Bahasa Inggris</span>
+        <h1 class="hero-title">Belajar Bahasa Inggris Itu <span class="highlight">Menyenangkan</span></h1>
+        <p class="hero-tagline">A digital Platform for Teaching and Writing — Teaching Mind, Writing Worlds.</p>
+        <div class="hero-actions">
+          <a href="#/artikel" class="btn btn-primary btn-lg">📚 Jelajahi Artikel</a>
+          <a href="#/materi/grammar" class="btn btn-outline btn-lg">🎓 Lihat Materi</a>
         </div>
       </div>
-
-      <div class="container">
-        <section class="section">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">📰 Artikel Terbaru</h2>
-              <p class="section-subtitle">Catatan mengajar dan tips belajar Bahasa Inggris</p>
-            </div>
-            <a href="#/artikel" class="btn btn-outline btn-sm">Lihat Semua →</a>
-          </div>
-          <div class="articles-grid">
-            ${latest.length ? latest.map(articleCard).join('') : emptyState('📝', 'Belum ada artikel', 'Artikel akan muncul setelah dipublikasikan.')}
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">🎓 Materi Bahasa Inggris</h2>
-              <p class="section-subtitle">Pilih topik yang ingin kamu pelajari</p>
-            </div>
-          </div>
-          <div class="materi-grid">
-            ${materiKeys.map(k => `
-              <a href="#/materi/${k}" class="materi-card">
-                <div class="materi-card-icon">${MATERI_META[k].icon}</div>
-                <div class="materi-card-title">${MATERI_META[k].title}</div>
-              </a>
-            `).join('')}
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">🧩 Aplikasi Saya</h2>
-              <p class="section-subtitle">Karya web buatan sendiri untuk pembelajaran</p>
-            </div>
-            <a href="#/aplikasi-saya" class="btn btn-outline btn-sm">Lihat Semua →</a>
-          </div>
-        </section>
-      </div>
-    </section>`;
-}
-
-function pageArticles() {
-  let list = state.articles;
-  if (state.categoryFilter !== 'all') {
-    list = list.filter(a => a.category === state.categoryFilter);
-  }
-  if (state.searchQuery) {
-    const q = state.searchQuery.toLowerCase();
-    list = list.filter(a =>
-      (a.title || '').toLowerCase().includes(q) ||
-      (a.excerpt || '').toLowerCase().includes(q) ||
-      (a.content || '').toLowerCase().includes(q)
-    );
-  }
-
-  const categories = [
-    { v: 'all', l: 'Semua' },
-    { v: 'materi', l: '📚 Materi' },
-    { v: 'opini', l: '✍️ Opini' },
-    { v: 'praktik', l: '🧪 Praktik' },
-    { v: 'info', l: '📢 Info' }
-  ];
-
-  return `
-    <section class="page">
-      <div class="container">
+      <div class="hero-image"><div class="hero-image-wrapper">📖</div></div>
+    </div></div></div>
+    <div class="container">
+      <section class="section">
         <div class="section-header">
-          <div>
-            <h1 class="section-title">📰 Semua Artikel</h1>
-            <p class="section-subtitle">${list.length} artikel ditemukan</p>
-          </div>
+          <div><h2 class="section-title">📰 Artikel Terbaru</h2><p class="section-subtitle">Catatan mengajar dan tips belajar</p></div>
+          <a href="#/artikel" class="btn btn-outline btn-sm">Lihat Semua →</a>
         </div>
-
-        <div class="filter-bar">
-          ${categories.map(c => `
-            <button class="filter-chip ${state.categoryFilter === c.v ? 'active' : ''}" data-category="${c.v}">${c.l}</button>
-          `).join('')}
-        </div>
-
-        <div class="articles-grid">
-          ${list.length ? list.map(articleCard).join('') : emptyState('🔍', 'Tidak ditemukan', 'Coba kata kunci atau kategori lain.')}
-        </div>
-      </div>
-    </section>`;
+        <div class="articles-grid">${latest.length?latest.map(articleCard).join(''):emptyState('📝','Belum ada artikel','Artikel akan muncul setelah dipublikasikan.')}</div>
+      </section>
+      <section class="section">
+        <div class="section-header"><div><h2 class="section-title">🎓 Materi Bahasa Inggris</h2></div></div>
+        <div class="materi-grid">${mk.map(k=>`<a href="#/materi/${k}" class="materi-card"><div class="materi-card-icon">${MATERI_META[k].icon}</div><div class="materi-card-title">${MATERI_META[k].title}</div></a>`).join('')}</div>
+      </section>
+    </div>
+  </section>`;
 }
 
-async function pageArticleDetail(slug) {
-  const a = await api.getArticleBySlug(slug);
-  if (!a) {
-    return `<section class="page"><div class="container">${emptyState('❌', 'Artikel tidak ditemukan', 'Artikel yang kamu cari tidak ada atau sudah dihapus.')}</div></section>`;
-  }
-  const tags = Array.isArray(a.tags) ? a.tags : [];
-  return `
-    <section class="page">
-      <div class="container">
-        <article class="article-page">
-          <header class="article-page-header">
-            <a href="#/artikel" class="btn btn-ghost btn-sm" style="margin-bottom:1rem">← Kembali ke Artikel</a>
-            <span class="article-page-category">${escapeHtml(a.category)}</span>
-            <h1 class="article-page-title">${escapeHtml(a.title)}</h1>
-            <div class="article-page-meta">
-              <span>✍️ ${escapeHtml(a.author_name || 'Darmawati')}</span>
-              <span>📅 ${formatDate(a.published_at || a.created_at)}</span>
-              <span>⏱️ ${a.read_time || readTime(a.content)} menit baca</span>
-            </div>
-          </header>
-          ${a.cover_url ? `<img src="${escapeHtml(a.cover_url)}" alt="${escapeHtml(a.title)}" class="article-page-cover">` : ''}
-          <div class="article-page-content">${escapeHtml(a.content)}</div>
-          ${tags.length ? `<div class="article-tags">${tags.map(t => `<span class="article-tag">#${escapeHtml(t)}</span>`).join('')}</div>` : ''}
-          <div class="share-section">
-            <p class="share-title">Bagikan artikel ini:</p>
-            <div class="share-buttons">
-              <button class="share-btn whatsapp" onclick="shareTo('whatsapp','${escapeHtml(a.title)}')">
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                WhatsApp
-              </button>
-              <button class="share-btn facebook" onclick="shareTo('facebook','${escapeHtml(a.title)}')">
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                Facebook
-              </button>
-              <button class="share-btn instagram" onclick="shareTo('instagram','${escapeHtml(a.title)}')">
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                Instagram
-              </button>
-              <button class="share-btn tiktok" onclick="shareTo('tiktok','${escapeHtml(a.title)}')">
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-                TikTok
-              </button>
-              <button class="share-btn copy" onclick="copyLink()">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                Copy Link
-              </button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>`;
+function pageArticles(){
+  let list=state.articles;
+  if(state.categoryFilter!=='all')list=list.filter(a=>a.category===state.categoryFilter);
+  if(state.searchQuery){const q=state.searchQuery.toLowerCase();list=list.filter(a=>(a.title||'').toLowerCase().includes(q)||(a.excerpt||'').toLowerCase().includes(q)||(a.content||'').toLowerCase().includes(q));}
+  const cats=[{v:'all',l:'Semua'},{v:'materi',l:'📚 Materi'},{v:'opini',l:'✍️ Opini'},{v:'praktik',l:'🧪 Praktik'},{v:'info',l:'📢 Info'}];
+  return `<section class="page"><div class="container">
+    <div class="section-header"><div><h1 class="section-title">📰 Semua Artikel</h1><p class="section-subtitle">${list.length} artikel ditemukan</p></div></div>
+    <div class="filter-bar">${cats.map(c=>`<button class="filter-chip ${state.categoryFilter===c.v?'active':''}" data-category="${c.v}">${c.l}</button>`).join('')}</div>
+    <div class="articles-grid">${list.length?list.map(articleCard).join(''):emptyState('🔍','Tidak ditemukan','Coba kata kunci atau kategori lain.')}</div>
+  </div></section>`;
 }
 
-function pageMateri(submenu) {
-  const meta = MATERI_META[submenu] || { icon: '📚', title: 'Materi', desc: '' };
-  const items = state.resources.filter(r => r.submenu === submenu);
-  return `
-    <section class="page">
-      <div class="container">
-        <header class="materi-page-header">
-          <h1 class="materi-page-title">${meta.icon} ${meta.title}</h1>
-          <p class="materi-page-desc">${meta.desc}</p>
-        </header>
-        ${items.length ? `
-          <div class="resource-list">
-            ${items.map(r => `
-              <a href="${escapeHtml(r.url)}" target="_blank" rel="noopener noreferrer" class="resource-card">
-                <div class="resource-icon">${r.icon || '🔗'}</div>
-                <div class="resource-body">
-                  <div class="resource-title">${escapeHtml(r.title)}</div>
-                  <div class="resource-desc">${escapeHtml(r.description || '')}</div>
-                </div>
-                <div class="resource-link-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></div>
-              </a>
-            `).join('')}
-          </div>` : emptyState('📭', 'Belum ada sumber belajar', 'Sumber belajar untuk topik ini akan segera ditambahkan.')}
+async function pageArticleDetail(slug){
+  const a=await api.getArticleBySlug(slug);
+  if(!a)return `<section class="page"><div class="container">${emptyState('❌','Artikel tidak ditemukan','Artikel yang kamu cari tidak ada.')}</div></section>`;
+  const tags=Array.isArray(a.tags)?a.tags:[];
+  return `<section class="page"><div class="container"><article class="article-page">
+    <header class="article-page-header">
+      <a href="#/artikel" class="btn btn-ghost btn-sm" style="margin-bottom:1rem">← Kembali</a>
+      <span class="article-page-category">${escapeHtml(a.category)}</span>
+      <h1 class="article-page-title">${escapeHtml(a.title)}</h1>
+      <div class="article-page-meta">
+        <span>✍️ ${escapeHtml(a.author_name||'Darmawati')}</span>
+        <span>📅 ${formatDate(a.published_at||a.created_at)}</span>
+        <span>⏱️ ${a.read_time||readTime(a.content)} menit</span>
       </div>
-    </section>`;
+    </header>
+    ${a.cover_url?`<img src="${escapeHtml(a.cover_url)}" alt="${escapeHtml(a.title)}" class="article-page-cover">`:''}
+    <div class="article-page-content">${escapeHtml(a.content)}</div>
+    ${tags.length?`<div class="article-tags">${tags.map(t=>`<span class="article-tag">#${escapeHtml(t)}</span>`).join('')}</div>`:''}
+    <div class="share-section">
+      <p class="share-title">Bagikan artikel ini:</p>
+      <div class="share-buttons">
+        <button class="share-btn whatsapp" onclick="shareTo('whatsapp','${escapeHtml(a.title).replace(/'/g,"\\'")}')"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg> WhatsApp</button>
+        <button class="share-btn facebook" onclick="shareTo('facebook','${escapeHtml(a.title).replace(/'/g,"\\'")}')"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</button>
+        <button class="share-btn instagram" onclick="shareTo('instagram','${escapeHtml(a.title).replace(/'/g,"\\'")}')"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8z"/></svg> Instagram</button>
+        <button class="share-btn tiktok" onclick="shareTo('tiktok','${escapeHtml(a.title).replace(/'/g,"\\'")}')"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg> TikTok</button>
+        <button class="share-btn copy" onclick="copyLink()"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg> Copy Link</button>
+      </div>
+    </div>
+  </article></div></section>`;
 }
 
-function pageMyApps() {
-  const apps = state.apps;
-  return `
-    <section class="page">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h1 class="section-title">🧩 Aplikasi Saya</h1>
-            <p class="section-subtitle">Kumpulan aplikasi web buatan sendiri untuk pembelajaran Bahasa Inggris</p>
-          </div>
-        </div>
-        ${apps.length ? `
-          <div class="apps-grid">
-            ${apps.map(a => `
-              <div class="app-card">
-                <div class="app-icon">${a.icon || '📱'}</div>
-                <div class="app-name">${escapeHtml(a.name)}</div>
-                <div class="app-desc">${escapeHtml(a.description || '')}</div>
-                <div class="app-footer">
-                  <span class="app-status ${a.status}">${a.status === 'live' ? 'Live' : a.status === 'beta' ? 'Beta' : 'Coming Soon'}</span>
-                  <a href="${escapeHtml(a.url)}" target="_blank" rel="noopener noreferrer" class="app-link">Kunjungi <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
-                </div>
+function pageMateri(submenu){
+  const meta=MATERI_META[submenu]||{icon:'📚',title:'Materi',desc:''};
+  const items=state.resources.filter(r=>r.submenu===submenu);
+  return `<section class="page"><div class="container">
+    <header class="materi-page-header"><h1 class="materi-page-title">${meta.icon} ${meta.title}</h1><p class="materi-page-desc">${meta.desc}</p></header>
+    ${items.length?`<div class="resource-list">${items.map(r=>`<a href="${escapeHtml(r.url)}" target="_blank" rel="noopener noreferrer" class="resource-card"><div class="resource-icon">${r.icon||'🔗'}</div><div class="resource-body"><div class="resource-title">${escapeHtml(r.title)}</div><div class="resource-desc">${escapeHtml(r.description||'')}</div></div><div class="resource-link-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></div></a>`).join('')}</div>`:emptyState('📭','Belum ada sumber belajar','Sumber belajar untuk topik ini akan segera ditambahkan.')}
+  </div></section>`;
+}
+
+function pageMyApps(){
+  return `<section class="page"><div class="container">
+    <div class="section-header"><div><h1 class="section-title">🧩 Aplikasi Saya</h1><p class="section-subtitle">Kumpulan aplikasi web buatan sendiri</p></div></div>
+    ${state.apps.length?`<div class="apps-grid">${state.apps.map(a=>`<div class="app-card"><div class="app-icon">${a.icon||'📱'}</div><div class="app-name">${escapeHtml(a.name)}</div><div class="app-desc">${escapeHtml(a.description||'')}</div><div class="app-footer"><span class="app-status ${a.status}">${a.status==='live'?'Live':a.status==='beta'?'Beta':'Coming Soon'}</span><a href="${escapeHtml(a.url)}" target="_blank" rel="noopener noreferrer" class="app-link">Kunjungi <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></div></div>`).join('')}</div>`:emptyState('📱','Belum ada aplikasi','Aplikasi akan ditampilkan di sini.')}
+  </div></section>`;
+}
+
+function pageAbout(){
+  const p=state.profile;
+  if(!p)return `<section class="page"><div class="container">${emptyState('👤','Profil belum tersedia','Data profil belum diisi.')}</div></section>`;
+  const exp=Array.isArray(p.expertise)?p.expertise:[];
+  const s=p.social_links||{};
+  return `<section class="page"><div class="container"><div class="about-grid">
+    <img src="${escapeHtml(p.photo_url||'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80')}" alt="${escapeHtml(p.name)}" class="about-photo" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80'">
+    <div class="about-content">
+      <h1>${escapeHtml(p.name)}</h1>
+      ${exp.length?`<div class="about-expertise">${exp.map(e=>`<span class="expertise-tag">${escapeHtml(e)}</span>`).join('')}</div>`:''}
+      <p class="about-bio">${escapeHtml(p.bio||'')}</p>
+      <div class="about-social">
+        ${s.instagram?`<a href="https://instagram.com/${escapeHtml(s.instagram)}" target="_blank" class="social-btn">📷 Instagram</a>`:''}
+        ${s.facebook?`<a href="https://facebook.com/${escapeHtml(s.facebook)}" target="_blank" class="social-btn">👍 Facebook</a>`:''}
+        ${s.youtube?`<a href="https://youtube.com/${escapeHtml(s.youtube)}" target="_blank" class="social-btn">▶️ YouTube</a>`:''}
+        ${s.tiktok?`<a href="https://tiktok.com/@${escapeHtml(s.tiktok)}" target="_blank" class="social-btn">🎵 TikTok</a>`:''}
+      </div>
+    </div>
+  </div></div></section>`;
+}
+
+function pageContact(){
+  return `<section class="page"><div class="container">
+    <div class="section-header"><div><h1 class="section-title">🤝 Kolaborasi</h1><p class="section-subtitle">Mari berkolaborasi untuk pendidikan</p></div></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Terbuka untuk Kolaborasi</h2>
+        <p>Saya terbuka untuk kolaborasi dengan sesama guru, sekolah, atau komunitas pendidikan.</p>
+        <div class="contact-method"><div class="contact-method-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div class="contact-method-body"><h4>Email</h4><p>darmawatiummuali@teachnwrite.local</p></div></div>
+      </div>
+      <form class="admin-panel" id="contact-form">
+        <h3>Kirim Pesan</h3>
+        <div class="form-group"><label>Nama</label><input type="text" id="contact-name" required></div>
+        <div class="form-group"><label>Email</label><input type="email" id="contact-email" required></div>
+        <div class="form-group"><label>Pesan</label><textarea id="contact-message" required></textarea></div>
+        <button type="submit" class="btn btn-primary btn-block">Kirim Pesan</button>
+      </form>
+    </div>
+  </div></section>`;
+}
+
+function pageAdmin(){
+  if(!sb.session)return `<section class="page"><div class="container">${emptyState('🔒','Akses ditolak','Silakan login dulu sebagai admin.')}</div></section>`;
+  return `<section class="page"><div class="container">
+    <div class="section-header"><div><h1 class="section-title">⚙️ Admin Panel</h1><p class="section-subtitle">Kelola artikel, materi, aplikasi, dan profil</p></div><button class="btn btn-danger btn-sm" id="logout-btn">Logout</button></div>
+
+    <div class="admin-tabs">
+      <button class="admin-tab active" data-tab="articles">📰 Artikel</button>
+      <button class="admin-tab" data-tab="resources">🔗 Sumber Materi</button>
+      <button class="admin-tab" data-tab="apps">📱 Aplikasi</button>
+      <button class="admin-tab" data-tab="profile">👤 Profil</button>
+    </div>
+
+    <div class="admin-tab-content" data-content="articles">
+      <div class="admin-panel">
+        <h3>✍️ Tambah Artikel Baru</h3>
+        <form id="article-form">
+          <div class="form-group"><label>Judul *</label><input type="text" id="af-title" required></div>
+          <div class="form-group"><label>Excerpt (ringkasan)</label><input type="text" id="af-excerpt"></div>
+          <div class="form-group"><label>Konten *</label><textarea id="af-content" rows="8" required></textarea></div>
+          <div class="form-group">
+            <label>Cover Gambar</label>
+            <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:.5rem">
+              <img id="af-cover-preview" src="https://placehold.co/200x120?text=No+Cover" style="width:200px;height:120px;object-fit:cover;border-radius:8px;border:1px solid var(--border)">
+              <div>
+                <input type="file" id="af-cover-file" accept="image/*" hidden>
+                <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('af-cover-file').click()">📷 Upload Cover</button>
+                <p class="form-hint">Atau tempel URL di bawah</p>
               </div>
-            `).join('')}
-          </div>` : emptyState('📱', 'Belum ada aplikasi', 'Aplikasi akan ditampilkan di sini.')}
+            </div>
+            <input type="url" id="af-cover" placeholder="https://..." style="margin-top:.5rem">
+          </div>
+          <div class="form-group"><label>Kategori *</label><select id="af-category" required><option value="materi">📚 Materi</option><option value="opini">✍️ Opini</option><option value="praktik">🧪 Praktik</option><option value="info">📢 Info</option></select></div>
+          <div class="form-group"><label>Tags (pisahkan koma)</label><input type="text" id="af-tags" placeholder="grammar, tenses, tips"></div>
+          <div class="form-group"><label>Status</label><select id="af-status"><option value="published">Published</option><option value="draft">Draft</option></select></div>
+          <button type="submit" class="btn btn-primary">💾 Simpan Artikel</button>
+        </form>
       </div>
-    </section>`;
+      <div class="admin-panel"><h3>📋 Daftar Artikel</h3><div class="admin-list" id="admin-articles-list">Memuat...</div></div>
+    </div>
+
+    <div class="admin-tab-content" data-content="resources" hidden>
+      <div class="admin-panel">
+        <h3>🔗 Tambah Sumber Materi</h3>
+        <form id="resource-form">
+          <div class="form-group"><label>Sub-menu *</label><select id="rf-submenu" required><option value="grammar">📖 Grammar</option><option value="vocabulary">📝 Vocabulary</option><option value="listening">🎧 Listening</option><option value="speaking">🗣️ Speaking</option><option value="reading">📚 Reading</option><option value="writing">✍️ Writing</option><option value="games">🎮 Games & Quiz</option><option value="apps">📱 Apps Rekomendasi</option></select></div>
+          <div class="form-group"><label>Judul *</label><input type="text" id="rf-title" required></div>
+          <div class="form-group"><label>Deskripsi</label><input type="text" id="rf-desc"></div>
+          <div class="form-group"><label>URL *</label><input type="url" id="rf-url" required></div>
+          <div class="form-group"><label>Ikon (emoji)</label><input type="text" id="rf-icon" placeholder="🔗"></div>
+          <button type="submit" class="btn btn-primary">💾 Simpan</button>
+        </form>
+      </div>
+      <div class="admin-panel"><h3>📋 Daftar Sumber Materi</h3><div class="admin-list" id="admin-resources-list">Memuat...</div></div>
+    </div>
+
+    <div class="admin-tab-content" data-content="apps" hidden>
+      <div class="admin-panel">
+        <h3>📱 Tambah Aplikasi</h3>
+        <form id="app-form">
+          <div class="form-group"><label>Nama *</label><input type="text" id="appf-name" required></div>
+          <div class="form-group"><label>Deskripsi</label><input type="text" id="appf-desc"></div>
+          <div class="form-group"><label>URL *</label><input type="url" id="appf-url" required></div>
+          <div class="form-group"><label>Ikon (emoji)</label><input type="text" id="appf-icon" placeholder="🎯"></div>
+          <div class="form-group"><label>Kategori</label><input type="text" id="appf-category"></div>
+          <div class="form-group"><label>Status</label><select id="appf-status"><option value="live">Live</option><option value="beta">Beta</option><option value="coming-soon">Coming Soon</option></select></div>
+          <button type="submit" class="btn btn-primary">💾 Simpan</button>
+        </form>
+      </div>
+      <div class="admin-panel"><h3>📋 Daftar Aplikasi</h3><div class="admin-list" id="admin-apps-list">Memuat...</div></div>
+    </div>
+
+    <div class="admin-tab-content" data-content="profile" hidden>
+      <div class="admin-panel">
+        <h3>👤 Edit Profil Guru</h3>
+        <form id="profile-form">
+          <div class="form-group">
+            <label>Foto Profil</label>
+            <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:.75rem">
+              <img id="profile-preview" class="profile-photo-preview" src="https://placehold.co/100x100?text=No+Photo" alt="Preview">
+              <div>
+                <input type="file" id="profile-photo-file" accept="image/*" hidden>
+                <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('profile-photo-file').click()">📷 Pilih Foto</button>
+                <p class="form-hint">JPG/PNG/WebP, maks 2MB</p>
+              </div>
+            </div>
+            <input type="hidden" id="profile-photo-url">
+          </div>
+          <div class="form-group"><label>Nama *</label><input type="text" id="pf-name" required></div>
+          <div class="form-group"><label>Bio</label><textarea id="pf-bio" rows="4"></textarea></div>
+          <div class="form-group"><label>Keahlian (pisahkan koma)</label><input type="text" id="pf-expertise" placeholder="Bahasa Inggris, Media Pembelajaran"></div>
+          <div class="form-group"><label>Instagram (username tanpa @)</label><input type="text" id="pf-instagram" placeholder="darmawati.ummu.ali"></div>
+          <div class="form-group"><label>Facebook (username)</label><input type="text" id="pf-facebook"></div>
+          <div class="form-group"><label>YouTube (channel)</label><input type="text" id="pf-youtube"></div>
+          <div class="form-group"><label>TikTok (username tanpa @)</label><input type="text" id="pf-tiktok"></div>
+          <button type="submit" class="btn btn-primary">💾 Simpan Profil</button>
+        </form>
+      </div>
+    </div>
+  </div></section>`;
 }
 
-function pageAbout() {
-  const p = state.profile;
-  if (!p) return `<section class="page"><div class="container">${emptyState('👤', 'Profil belum tersedia', 'Data profil belum diisi.')}</div></section>`;
-  const expertise = Array.isArray(p.expertise) ? p.expertise : [];
-  const social = p.social_links || {};
-  return `
-    <section class="page">
-      <div class="container">
-        <div class="about-grid">
-          <img src="${escapeHtml(p.photo_url || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80')}" alt="${escapeHtml(p.name)}" class="about-photo" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80'">
-          <div class="about-content">
-            <h1>${escapeHtml(p.name)}</h1>
-            ${expertise.length ? `<div class="about-expertise">${expertise.map(e => `<span class="expertise-tag">${escapeHtml(e)}</span>`).join('')}</div>` : ''}
-            <p class="about-bio">${escapeHtml(p.bio || '')}</p>
-            <div class="about-social">
-              ${social.instagram ? `<a href="https://instagram.com/${escapeHtml(social.instagram)}" target="_blank" class="social-btn">📷 Instagram</a>` : ''}
-              ${social.facebook ? `<a href="https://facebook.com/${escapeHtml(social.facebook)}" target="_blank" class="social-btn">👍 Facebook</a>` : ''}
-              ${social.youtube ? `<a href="https://youtube.com/${escapeHtml(social.youtube)}" target="_blank" class="social-btn">▶️ YouTube</a>` : ''}
-              ${social.tiktok ? `<a href="https://tiktok.com/@${escapeHtml(social.tiktok)}" target="_blank" class="social-btn">🎵 TikTok</a>` : ''}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>`;
-}
+async function render(){
+  const hash=location.hash.replace(/^#/,'')||'/';
+  const parts=hash.split('/').filter(Boolean);
+  const app=$('#app');
+  const progress=$('#reading-progress');
 
-function pageContact() {
-  return `
-    <section class="page">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h1 class="section-title">🤝 Kolaborasi</h1>
-            <p class="section-subtitle">Mari berkolaborasi untuk pendidikan yang lebih baik</p>
-          </div>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h2>Terbuka untuk Kolaborasi</h2>
-            <p>Saya terbuka untuk kolaborasi dengan sesama guru, sekolah, atau komunitas pendidikan. Baik untuk berbagi materi, menulis bersama, atau mengembangkan media pembelajaran.</p>
-            <div class="contact-method">
-              <div class="contact-method-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
-              <div class="contact-method-body"><h4>Email</h4><p>darmawatiummuali@teachnwrite.local</p></div>
-            </div>
-            <div class="contact-method">
-              <div class="contact-method-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
-              <div class="contact-method-body"><h4>Lokasi</h4><p>Indonesia</p></div>
-            </div>
-          </div>
-          <form class="admin-panel" id="contact-form">
-            <h3>Kirim Pesan</h3>
-            <div class="form-group">
-              <label for="contact-name">Nama</label>
-              <input type="text" id="contact-name" required>
-            </div>
-            <div class="form-group">
-              <label for="contact-email">Email</label>
-              <input type="email" id="contact-email" required>
-            </div>
-            <div class="form-group">
-              <label for="contact-message">Pesan</label>
-              <textarea id="contact-message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Kirim Pesan</button>
-          </form>
-        </div>
-      </div>
-    </section>`;
-}
-
-function pageAdmin() {
-  if (!sb.session) {
-    return `<section class="page"><div class="container">${emptyState('🔒', 'Akses ditolak', 'Silakan login dulu sebagai admin.')}</div></section>`;
-  }
-  return `
-    <section class="page">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h1 class="section-title">⚙️ Admin Panel</h1>
-            <p class="section-subtitle">Kelola artikel, sumber materi, dan aplikasi</p>
-          </div>
-          <button class="btn btn-danger btn-sm" id="logout-btn">Logout</button>
-        </div>
-
-        <div class="admin-tabs">
-          <button class="admin-tab active" data-tab="articles">📰 Artikel</button>
-          <button class="admin-tab" data-tab="resources">🔗 Sumber Materi</button>
-          <button class="admin-tab" data-tab="apps">📱 Aplikasi</button>
-        </div>
-
-        <div class="admin-tab-content" data-content="articles">
-          <div class="admin-panel">
-            <h3>✍️ Tambah Artikel Baru</h3>
-            <form id="article-form">
-              <div class="form-group"><label>Judul *</label><input type="text" id="af-title" required></div>
-              <div class="form-group"><label>Excerpt (ringkasan singkat)</label><input type="text" id="af-excerpt"></div>
-              <div class="form-group"><label>Konten *</label><textarea id="af-content" rows="8" required></textarea></div>
-              <div class="form-group"><label>URL Cover (opsional)</label><input type="url" id="af-cover" placeholder="https://..."></div>
-              <div class="form-group">
-                <label>Kategori *</label>
-                <select id="af-category" required>
-                  <option value="materi">📚 Materi</option>
-                  <option value="opini">✍️ Opini</option>
-                  <option value="praktik">🧪 Praktik</option>
-                  <option value="info">📢 Info</option>
-                </select>
-              </div>
-              <div class="form-group"><label>Tags (pisahkan dengan koma)</label><input type="text" id="af-tags" placeholder="grammar, tenses, tips"></div>
-              <div class="form-group">
-                <label>Status</label>
-                <select id="af-status"><option value="published">Published</option><option value="draft">Draft</option></select>
-              </div>
-              <button type="submit" class="btn btn-primary">💾 Simpan Artikel</button>
-            </form>
-          </div>
-          <div class="admin-panel">
-            <h3>📋 Daftar Artikel</h3>
-            <div class="admin-list" id="admin-articles-list">Memuat...</div>
-          </div>
-        </div>
-
-        <div class="admin-tab-content" data-content="resources" hidden>
-          <div class="admin-panel">
-            <h3>🔗 Tambah Sumber Materi</h3>
-            <form id="resource-form">
-              <div class="form-group">
-                <label>Sub-menu *</label>
-                <select id="rf-submenu" required>
-                  <option value="grammar">📖 Grammar</option>
-                  <option value="vocabulary">📝 Vocabulary</option>
-                  <option value="listening">🎧 Listening</option>
-                  <option value="speaking">🗣️ Speaking</option>
-                  <option value="reading">📚 Reading</option>
-                  <option value="writing">✍️ Writing</option>
-                  <option value="games">🎮 Games & Quiz</option>
-                  <option value="apps">📱 Apps Rekomendasi</option>
-                </select>
-              </div>
-              <div class="form-group"><label>Judul *</label><input type="text" id="rf-title" required></div>
-              <div class="form-group"><label>Deskripsi</label><input type="text" id="rf-desc"></div>
-              <div class="form-group"><label>URL *</label><input type="url" id="rf-url" required></div>
-              <div class="form-group"><label>Ikon (emoji)</label><input type="text" id="rf-icon" placeholder="🔗"></div>
-              <button type="submit" class="btn btn-primary">💾 Simpan</button>
-            </form>
-          </div>
-          <div class="admin-panel">
-            <h3>📋 Daftar Sumber Materi</h3>
-            <div class="admin-list" id="admin-resources-list">Memuat...</div>
-          </div>
-        </div>
-
-        <div class="admin-tab-content" data-content="apps" hidden>
-          <div class="admin-panel">
-            <h3>📱 Tambah Aplikasi</h3>
-            <form id="app-form">
-              <div class="form-group"><label>Nama Aplikasi *</label><input type="text" id="appf-name" required></div>
-              <div class="form-group"><label>Deskripsi</label><input type="text" id="appf-desc"></div>
-              <div class="form-group"><label>URL *</label><input type="url" id="appf-url" required></div>
-              <div class="form-group"><label>Ikon (emoji)</label><input type="text" id="appf-icon" placeholder="🎯"></div>
-              <div class="form-group"><label>Kategori</label><input type="text" id="appf-category" placeholder="game / latihan / alat-bantu"></div>
-              <div class="form-group">
-                <label>Status</label>
-                <select id="appf-status"><option value="live">Live</option><option value="beta">Beta</option><option value="coming-soon">Coming Soon</option></select>
-              </div>
-              <button type="submit" class="btn btn-primary">💾 Simpan</button>
-            </form>
-          </div>
-          <div class="admin-panel">
-            <h3>📋 Daftar Aplikasi</h3>
-            <div class="admin-list" id="admin-apps-list">Memuat...</div>
-          </div>
-        </div>
-      </div>
-    </section>`;
-}
-
-/* ============================================
-   ROUTER
-   ============================================ */
-async function render() {
-  const hash = location.hash.replace(/^#/, '') || '/';
-  const parts = hash.split('/').filter(Boolean);
-  const app = $('#app');
-  const progress = $('#reading-progress');
-
-  // Update nav active
-  $$('.nav-link').forEach(l => {
-    const r = l.getAttribute('data-route');
-    if (r && (hash === r || (r !== '/' && hash.startsWith(r)))) l.classList.add('active');
+  $$('.nav-link').forEach(l=>{
+    const r=l.getAttribute('data-route');
+    if(r&&(hash===r||(r!=='/'&&hash.startsWith(r))))l.classList.add('active');
     else l.classList.remove('active');
   });
 
-  try {
-    let html = '';
+  try{
+    let html='';
+    if(parts.length===0||parts[0]===''){html=pageHome();progress.classList.remove('active');}
+    else if(parts[0]==='artikel'&&parts[1]){html=await pageArticleDetail(parts[1]);progress.classList.add('active');}
+    else if(parts[0]==='artikel'){html=pageArticles();progress.classList.remove('active');}
+    else if(parts[0]==='materi'&&parts[1]){html=pageMateri(parts[1]);progress.classList.remove('active');}
+    else if(parts[0]==='aplikasi-saya'){html=pageMyApps();progress.classList.remove('active');}
+    else if(parts[0]==='tentang'){html=pageAbout();progress.classList.remove('active');}
+    else if(parts[0]==='kolaborasi'){html=pageContact();progress.classList.remove('active');}
+    else if(parts[0]==='admin'){html=pageAdmin();progress.classList.remove('active');if(sb.session)setTimeout(loadAdminLists,50);}
+    else{html=`<section class="page"><div class="container">${emptyState('🧭','Halaman tidak ditemukan','Halaman yang kamu cari tidak ada.')}</div></section>`;progress.classList.remove('active');}
 
-    if (parts.length === 0 || parts[0] === '') {
-      html = pageHome();
-      progress.classList.remove('active');
-    } else if (parts[0] === 'artikel' && parts[1]) {
-      html = await pageArticleDetail(parts[1]);
-      progress.classList.add('active');
-    } else if (parts[0] === 'artikel') {
-      html = pageArticles();
-      progress.classList.remove('active');
-    } else if (parts[0] === 'materi' && parts[1]) {
-      html = pageMateri(parts[1]);
-      progress.classList.remove('active');
-    } else if (parts[0] === 'aplikasi-saya') {
-      html = pageMyApps();
-      progress.classList.remove('active');
-    } else if (parts[0] === 'tentang') {
-      html = pageAbout();
-      progress.classList.remove('active');
-    } else if (parts[0] === 'kolaborasi') {
-      html = pageContact();
-      progress.classList.remove('active');
-    } else if (parts[0] === 'admin') {
-      html = pageAdmin();
-      progress.classList.remove('active');
-      if (sb.session) setTimeout(loadAdminLists, 50);
-    } else {
-      html = `<section class="page"><div class="container">${emptyState('🧭', 'Halaman tidak ditemukan', 'Halaman yang kamu cari tidak ada.')}</div></section>`;
-      progress.classList.remove('active');
-    }
+    app.innerHTML=html;
 
-    app.innerHTML = html;
+    const titles={'/':'Beranda','/artikel':'Artikel','/tentang':'Tentang','/kolaborasi':'Kolaborasi','/aplikasi-saya':'Aplikasi Saya','/admin':'Admin'};
+    document.title=`${titles[hash]||'teachNwrite'} — teachNwrite`;
 
-    // Update meta title
-    const titles = {
-      '/': 'Beranda', '/artikel': 'Artikel', '/tentang': 'Tentang',
-      '/kolaborasi': 'Kolaborasi', '/aplikasi-saya': 'Aplikasi Saya', '/admin': 'Admin'
-    };
-    document.title = `${titles[hash] || 'teachNwrite'} — teachNwrite`;
-
-    // Scroll to top (unless article page, biar progress bar akurat)
-    if (!parts[1] || parts[0] !== 'artikel') window.scrollTo(0, 0);
-
-  } catch (err) {
-    console.error('Render error:', err);
-    app.innerHTML = `<section class="page"><div class="container">${emptyState('⚠️', 'Terjadi kesalahan', escapeHtml(err.message))}</div></section>`;
+    if(!parts[1]||parts[0]!=='artikel')window.scrollTo(0,0);
+  }catch(err){
+    console.error('Render error:',err);
+    app.innerHTML=`<section class="page"><div class="container">${emptyState('⚠️','Terjadi kesalahan',escapeHtml(err.message))}</div></section>`;
   }
 }
 
-/* ============================================
-   LOAD DATA
-   ============================================ */
-async function loadAll() {
-  const overlay = $('#loading-overlay');
-  try {
-    const [articles, profile, resources, apps] = await Promise.all([
-      api.getArticles().catch(e => { console.error('articles:', e); return []; }),
-      api.getProfile().catch(e => { console.error('profile:', e); return null; }),
-      api.getResources().catch(e => { console.error('resources:', e); return []; }),
-      api.getMyApps().catch(e => { console.error('apps:', e); return []; })
+async function loadAll(){
+  const overlay=$('#loading-overlay');
+  try{
+    const [articles,profile,resources,apps]=await Promise.all([
+      api.getArticles().catch(e=>{console.error('articles:',e);return[];}),
+      api.getProfile().catch(e=>{console.error('profile:',e);return null;}),
+      api.getResources().catch(e=>{console.error('resources:',e);return[];}),
+      api.getMyApps().catch(e=>{console.error('apps:',e);return[];})
     ]);
-    state.articles = articles || [];
-    state.profile = profile;
-    state.resources = resources || [];
-    state.apps = apps || [];
+    state.articles=articles||[];
+    state.profile=profile;
+    state.resources=resources||[];
+    state.apps=apps||[];
     renderFooterSocial();
-  } finally {
-    setTimeout(() => overlay.classList.add('hidden'), 300);
+  }finally{
+    setTimeout(()=>overlay.classList.add('hidden'),300);
   }
 }
 
-function renderFooterSocial() {
-  const p = state.profile;
-  const wrap = $('#footer-social');
-  if (!p || !p.social_links) {
-    wrap.innerHTML = '<p style="color:var(--muted);font-size:.85rem">Belum ada kontak</p>';
-    return;
-  }
-  const s = p.social_links;
-  const links = [];
-  if (s.instagram) links.push(`<a href="https://instagram.com/${escapeHtml(s.instagram)}" target="_blank">📷 IG</a>`);
-  if (s.facebook) links.push(`<a href="https://facebook.com/${escapeHtml(s.facebook)}" target="_blank">👍 FB</a>`);
-  if (s.youtube) links.push(`<a href="https://youtube.com/${escapeHtml(s.youtube)}" target="_blank">▶️ YT</a>`);
-  if (s.tiktok) links.push(`<a href="https://tiktok.com/@${escapeHtml(s.tiktok)}" target="_blank">🎵 TT</a>`);
-  wrap.innerHTML = `<div class="footer-social-links">${links.join('') || '<p style="color:var(--muted);font-size:.85rem">Belum ada kontak</p>'}</div>`;
+function renderFooterSocial(){
+  const p=state.profile;const wrap=$('#footer-social');
+  if(!p||!p.social_links){wrap.innerHTML='<p style="color:var(--muted);font-size:.85rem">Belum ada kontak</p>';return;}
+  const s=p.social_links;const links=[];
+  if(s.instagram)links.push(`<a href="https://instagram.com/${escapeHtml(s.instagram)}" target="_blank">📷 IG</a>`);
+  if(s.facebook)links.push(`<a href="https://facebook.com/${escapeHtml(s.facebook)}" target="_blank">👍 FB</a>`);
+  if(s.youtube)links.push(`<a href="https://youtube.com/${escapeHtml(s.youtube)}" target="_blank">▶️ YT</a>`);
+  if(s.tiktok)links.push(`<a href="https://tiktok.com/@${escapeHtml(s.tiktok)}" target="_blank">🎵 TT</a>`);
+  wrap.innerHTML=`<div class="footer-social-links">${links.join('')||'<p style="color:var(--muted);font-size:.85rem">Belum ada kontak</p>'}</div>`;
 }
 
-/* ============================================
-   ADMIN
-   ============================================ */
-async function loadAdminLists() {
-  try {
-    const all = await api.getAllArticles();
-    const list = $('#admin-articles-list');
-    if (!all?.length) { list.innerHTML = '<div class="admin-empty">Belum ada artikel</div>'; }
-    else {
-      list.innerHTML = all.map(a => `
-        <div class="admin-item">
-          <div class="admin-item-body">
-            <div class="admin-item-title">${escapeHtml(a.title)}</div>
-            <div class="admin-item-meta">
-              <span class="status-badge status-${a.status}">${a.status}</span>
-              · ${escapeHtml(a.category)} · ${formatDate(a.created_at)}
-            </div>
-          </div>
-          <div class="admin-item-actions">
-            <a href="#/artikel/${a.slug}" class="btn btn-ghost btn-sm">Lihat</a>
-            <button class="btn btn-danger btn-sm" onclick="deleteArticle('${a.id}')">Hapus</button>
-          </div>
-        </div>`).join('');
+async function loadAdminLists(){
+  try{
+    const all=await api.getAllArticles();
+    const list=$('#admin-articles-list');
+    if(!all?.length){list.innerHTML='<div class="admin-empty">Belum ada artikel</div>';}
+    else{
+      list.innerHTML=all.map(a=>`<div class="admin-item">
+        <div class="admin-item-body">
+          <div class="admin-item-title">${escapeHtml(a.title)}</div>
+          <div class="admin-item-meta"><span class="status-badge status-${a.status}">${a.status}</span> · ${escapeHtml(a.category)} · ${formatDate(a.created_at)}</div>
+        </div>
+        <div class="admin-item-actions">
+          <a href="#/artikel/${a.slug}" class="btn btn-ghost btn-sm">Lihat</a>
+          <button class="btn btn-danger btn-sm" onclick="deleteArticle('${a.id}')">Hapus</button>
+        </div>
+      </div>`).join('');
     }
+    const rList=$('#admin-resources-list');
+    rList.innerHTML=state.resources.length?state.resources.map(r=>`<div class="admin-item">
+      <div class="admin-item-body"><div class="admin-item-title">${r.icon||'🔗'} ${escapeHtml(r.title)}</div><div class="admin-item-meta">${escapeHtml(r.submenu)} · ${escapeHtml(r.url)}</div></div>
+      <div class="admin-item-actions"><button class="btn btn-danger btn-sm" onclick="deleteResource('${r.id}')">Hapus</button></div>
+    </div>`).join(''):'<div class="admin-empty">Belum ada sumber materi</div>';
 
-    const rList = $('#admin-resources-list');
-    rList.innerHTML = state.resources.length
-      ? state.resources.map(r => `
-          <div class="admin-item">
-            <div class="admin-item-body">
-              <div class="admin-item-title">${r.icon || '🔗'} ${escapeHtml(r.title)}</div>
-              <div class="admin-item-meta">${escapeHtml(r.submenu)} · ${escapeHtml(r.url)}</div>
-            </div>
-            <div class="admin-item-actions">
-              <button class="btn btn-danger btn-sm" onclick="deleteResource('${r.id}')">Hapus</button>
-            </div>
-          </div>`).join('')
-      : '<div class="admin-empty">Belum ada sumber materi</div>';
-
-    const aList = $('#admin-apps-list');
-    aList.innerHTML = state.apps.length
-      ? state.apps.map(a => `
-          <div class="admin-item">
-            <div class="admin-item-body">
-              <div class="admin-item-title">${a.icon || '📱'} ${escapeHtml(a.name)}</div>
-              <div class="admin-item-meta">${escapeHtml(a.url)} · ${a.status}</div>
-            </div>
-            <div class="admin-item-actions">
-              <button class="btn btn-danger btn-sm" onclick="deleteApp('${a.id}')">Hapus</button>
-            </div>
-          </div>`).join('')
-      : '<div class="admin-empty">Belum ada aplikasi</div>';
-  } catch (err) {
-    showToast('Gagal memuat data admin: ' + err.message, 'error');
-  }
+    const aList=$('#admin-apps-list');
+    aList.innerHTML=state.apps.length?state.apps.map(a=>`<div class="admin-item">
+      <div class="admin-item-body"><div class="admin-item-title">${a.icon||'📱'} ${escapeHtml(a.name)}</div><div class="admin-item-meta">${escapeHtml(a.url)} · ${a.status}</div></div>
+      <div class="admin-item-actions"><button class="btn btn-danger btn-sm" onclick="deleteApp('${a.id}')">Hapus</button></div>
+    </div>`).join(''):'<div class="admin-empty">Belum ada aplikasi</div>';
+  }catch(err){showToast('Gagal memuat data admin: '+err.message,'error');}
 }
 
-window.deleteArticle = async (id) => {
-  if (!confirm('Yakin hapus artikel ini?')) return;
-  try {
-    await api.deleteArticle(id);
-    showToast('Artikel dihapus', 'success');
-    state.articles = state.articles.filter(a => a.id !== id);
-    loadAdminLists();
-  } catch (e) { showToast('Gagal: ' + e.message, 'error'); }
-};
-
-window.deleteResource = async (id) => {
-  if (!confirm('Yakin hapus sumber ini?')) return;
-  try {
-    await api.deleteResource(id);
-    showToast('Sumber dihapus', 'success');
-    state.resources = state.resources.filter(r => r.id !== id);
-    loadAdminLists();
-  } catch (e) { showToast('Gagal: ' + e.message, 'error'); }
-};
-
-window.deleteApp = async (id) => {
-  if (!confirm('Yakin hapus aplikasi ini?')) return;
-  try {
-    await api.deleteApp(id);
-    showToast('Aplikasi dihapus', 'success');
-    state.apps = state.apps.filter(a => a.id !== id);
-    loadAdminLists();
-  } catch (e) { showToast('Gagal: ' + e.message, 'error'); }
-};
-
-/* ============================================
-   SHARE
-   ============================================ */
-window.shareTo = (platform, title) => {
-  const url = location.href;
-  const text = `${title} — ${url}`;
-  const links = {
-    whatsapp: `https://wa.me/?text=${encodeURIComponent(text)}`,
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-    instagram: null,
-    tiktok: null
-  };
-  if (platform === 'instagram' || platform === 'tiktok') {
-    navigator.clipboard.writeText(url).then(() => {
-      showToast(`Link dicopy! Paste di bio/caption ${platform === 'instagram' ? 'Instagram' : 'TikTok'} kamu.`, 'info', 4000);
-    });
+function loadProfileForm(){
+  const p=state.profile;
+  if(!p){
+    $('#profile-preview').src='https://placehold.co/100x100?text=No+Photo';
     return;
   }
-  window.open(links[platform], '_blank', 'noopener,width=600,height=500');
+  $('#pf-name').value=p.name||'';
+  $('#pf-bio').value=p.bio||'';
+  $('#pf-expertise').value=(p.expertise||[]).join(', ');
+  $('#profile-photo-url').value=p.photo_url||'';
+  $('#profile-preview').src=p.photo_url||'https://placehold.co/100x100?text=No+Photo';
+  const s=p.social_links||{};
+  $('#pf-instagram').value=s.instagram||'';
+  $('#pf-facebook').value=s.facebook||'';
+  $('#pf-youtube').value=s.youtube||'';
+  $('#pf-tiktok').value=s.tiktok||'';
+}
+
+window.deleteArticle=async(id)=>{
+  if(!confirm('Yakin hapus artikel ini?'))return;
+  try{await api.deleteArticle(id);showToast('Artikel dihapus','success');state.articles=state.articles.filter(a=>a.id!==id);loadAdminLists();}
+  catch(e){showToast('Gagal: '+e.message,'error');}
+};
+window.deleteResource=async(id)=>{
+  if(!confirm('Yakin hapus sumber ini?'))return;
+  try{await api.deleteResource(id);showToast('Sumber dihapus','success');state.resources=state.resources.filter(r=>r.id!==id);loadAdminLists();}
+  catch(e){showToast('Gagal: '+e.message,'error');}
+};
+window.deleteApp=async(id)=>{
+  if(!confirm('Yakin hapus aplikasi ini?'))return;
+  try{await api.deleteApp(id);showToast('Aplikasi dihapus','success');state.apps=state.apps.filter(a=>a.id!==id);loadAdminLists();}
+  catch(e){showToast('Gagal: '+e.message,'error');}
 };
 
-window.copyLink = () => {
-  navigator.clipboard.writeText(location.href).then(() => {
-    showToast('Link dicopy!', 'success');
-  });
+window.shareTo=(platform,title)=>{
+  const url=location.href;const text=`${title} — ${url}`;
+  if(platform==='instagram'||platform==='tiktok'){
+    navigator.clipboard.writeText(url).then(()=>showToast(`Link dicopy! Paste di bio/caption ${platform==='instagram'?'Instagram':'TikTok'} kamu.`,'info',4000));
+    return;
+  }
+  const links={
+    whatsapp:`https://wa.me/?text=${encodeURIComponent(text)}`,
+    facebook:`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
+  };
+  window.open(links[platform],'_blank','noopener,width=600,height=500');
+};
+window.copyLink=()=>{
+  navigator.clipboard.writeText(location.href).then(()=>showToast('Link dicopy!','success'));
 };
 
-/* ============================================
-   EVENT BINDINGS
-   ============================================ */
-function bindEvents() {
-  // Theme
-  const savedTheme = localStorage.getItem('tn_theme') || 'light';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  $('#theme-toggle').addEventListener('click', () => {
-    const cur = document.documentElement.getAttribute('data-theme');
-    const next = cur === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('tn_theme', next);
+function openModal(id){document.getElementById(id).classList.add('open');}
+function closeModal(id){document.getElementById(id).classList.remove('open');}
+
+function updateReadingProgress(){
+  const bar=$('#reading-progress');
+  if(!bar.classList.contains('active'))return;
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  const pct=h>0?(window.scrollY/h)*100:0;
+  bar.style.width=Math.min(100,pct)+'%';
+}
+
+function bindEvents(){
+  const savedTheme=localStorage.getItem('tn_theme')||'light';
+  document.documentElement.setAttribute('data-theme',savedTheme);
+  $('#theme-toggle').addEventListener('click',()=>{
+    const cur=document.documentElement.getAttribute('data-theme');
+    const next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',next);
+    localStorage.setItem('tn_theme',next);
   });
 
-  // Mobile menu
-  $('#mobile-menu-toggle').addEventListener('click', () => {
-    $('#mobile-menu').classList.toggle('open');
-  });
-  $$('.mobile-menu-link').forEach(a => a.addEventListener('click', () => $('#mobile-menu').classList.remove('open')));
-  $$('.mobile-menu-group-toggle').forEach(btn => {
-    btn.addEventListener('click', () => btn.parentElement.classList.toggle('open'));
-  });
-  $$('.mobile-menu-submenu a').forEach(a => a.addEventListener('click', () => $('#mobile-menu').classList.remove('open')));
+  $('#mobile-menu-toggle').addEventListener('click',()=>$('#mobile-menu').classList.toggle('open'));
+  $$('.mobile-menu-link').forEach(a=>a.addEventListener('click',()=>$('#mobile-menu').classList.remove('open')));
+  $$('.mobile-menu-group-toggle').forEach(btn=>btn.addEventListener('click',()=>btn.parentElement.classList.toggle('open')));
+  $$('.mobile-menu-submenu a').forEach(a=>a.addEventListener('click',()=>$('#mobile-menu').classList.remove('open')));
 
-  // Dropdown
-  $$('.nav-dropdown-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      btn.parentElement.classList.toggle('open');
-    });
+  $$('.nav-dropdown-btn').forEach(btn=>{
+    btn.addEventListener('click',(e)=>{e.stopPropagation();btn.parentElement.classList.toggle('open');});
   });
-  document.addEventListener('click', () => {
-    $$('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
-  });
+  document.addEventListener('click',()=>$$('.nav-dropdown.open').forEach(d=>d.classList.remove('open')));
 
-  // Search
-  $('#search-toggle').addEventListener('click', () => {
-    const bar = $('#search-bar');
-    bar.classList.toggle('open');
-    if (bar.classList.contains('open')) $('#search-input').focus();
+  $('#search-toggle').addEventListener('click',()=>{
+    const bar=$('#search-bar');bar.classList.toggle('open');
+    if(bar.classList.contains('open'))$('#search-input').focus();
   });
-  $('#search-close').addEventListener('click', () => $('#search-bar').classList.remove('open'));
-  $('#search-input').addEventListener('input', (e) => {
-    state.searchQuery = e.target.value;
-    if (location.hash !== '#/artikel') location.hash = '#/artikel';
+  $('#search-close').addEventListener('click',()=>$('#search-bar').classList.remove('open'));
+  $('#search-input').addEventListener('input',(e)=>{
+    state.searchQuery=e.target.value;
+    if(location.hash!=='#/artikel')location.hash='#/artikel';
     else render();
   });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      $('#search-bar').classList.remove('open');
-      closeModal('login-modal');
-    }
+  document.addEventListener('keydown',(e)=>{
+    if(e.key==='Escape'){$('#search-bar').classList.remove('open');closeModal('login-modal');}
   });
 
-  // Category filter (delegasi)
-  document.addEventListener('click', (e) => {
-    const chip = e.target.closest('.filter-chip');
-    if (chip) {
-      state.categoryFilter = chip.dataset.category;
-      render();
-    }
+  document.addEventListener('click',(e)=>{
+    const chip=e.target.closest('.filter-chip');
+    if(chip){state.categoryFilter=chip.dataset.category;render();}
   });
 
-  // Admin login modal
-  $('#admin-toggle').addEventListener('click', () => {
-    if (sb.session) {
-      location.hash = '#/admin';
-    } else {
-      openModal('login-modal');
-      $('#login-email').focus();
-    }
+  $('#admin-toggle').addEventListener('click',()=>{
+    if(sb.session){location.hash='#/admin';}
+    else{openModal('login-modal');$('#login-email').focus();}
   });
 
-  $('#login-form').addEventListener('submit', async (e) => {
+  $('#login-form').addEventListener('submit',async(e)=>{
     e.preventDefault();
-    const email = $('#login-email').value.trim();
-    const pwd = $('#login-password').value;
-    const err = $('#login-error');
-    const btn = $('#login-submit');
-    err.hidden = true;
-    btn.disabled = true;
-    btn.textContent = 'Memproses...';
-    try {
-      await sb.signIn(email, pwd);
+    const email=$('#login-email').value.trim();
+    const pwd=$('#login-password').value;
+    const err=$('#login-error');const btn=$('#login-submit');
+    err.hidden=true;btn.disabled=true;btn.textContent='Memproses...';
+    try{
+      await sb.signIn(email,pwd);
       closeModal('login-modal');
-      $('#admin-toggle-text').textContent = 'Admin';
-      showToast('Login berhasil!', 'success');
-      location.hash = '#/admin';
-    } catch (ex) {
-      err.textContent = '❌ ' + ex.message;
-      err.hidden = false;
-    } finally {
-      btn.disabled = false;
-      btn.textContent = 'Masuk';
-    }
+      $('#admin-toggle-text').textContent='Admin';
+      showToast('Login berhasil!','success');
+      location.hash='#/admin';
+    }catch(ex){
+      err.textContent='❌ '+ex.message;err.hidden=false;
+    }finally{btn.disabled=false;btn.textContent='Masuk';}
   });
 
-  // Modal close
-  document.addEventListener('click', (e) => {
-    const btn = e.target.closest('[data-close-modal]');
-    if (btn) closeModal(btn.dataset.closeModal);
-    if (e.target.classList.contains('modal')) e.target.classList.remove('open');
+  document.addEventListener('click',(e)=>{
+    const btn=e.target.closest('[data-close-modal]');
+    if(btn)closeModal(btn.dataset.closeModal);
+    if(e.target.classList.contains('modal'))e.target.classList.remove('open');
   });
 
-  // Back to top
-  const btt = $('#back-to-top');
-  window.addEventListener('scroll', () => {
-    btt.classList.toggle('show', window.scrollY > 400);
-    $('#header').classList.toggle('scrolled', window.scrollY > 10);
+  const btt=$('#back-to-top');
+  window.addEventListener('scroll',()=>{
+    btt.classList.toggle('show',window.scrollY>400);
+    $('#header').classList.toggle('scrolled',window.scrollY>10);
     updateReadingProgress();
   });
-  btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-  // Admin tabs
-  document.addEventListener('click', (e) => {
-    const tab = e.target.closest('.admin-tab');
-    if (tab) {
-      $$('.admin-tab').forEach(t => t.classList.remove('active'));
+  document.addEventListener('click',(e)=>{
+    const tab=e.target.closest('.admin-tab');
+    if(tab){
+      $$('.admin-tab').forEach(t=>t.classList.remove('active'));
       tab.classList.add('active');
-      $$('.admin-tab-content').forEach(c => c.hidden = true);
-      const content = document.querySelector(`.admin-tab-content[data-content="${tab.dataset.tab}"]`);
-      if (content) content.hidden = false;
+      $$('.admin-tab-content').forEach(c=>c.hidden=true);
+      const content=document.querySelector(`.admin-tab-content[data-content="${tab.dataset.tab}"]`);
+      if(content)content.hidden=false;
+      if(tab.dataset.tab==='profile')loadProfileForm();
     }
   });
 
-  // Form admin: artikel
-  document.addEventListener('submit', async (e) => {
-    if (e.target.id === 'article-form') {
+  // Preview foto profil
+  document.addEventListener('change',(e)=>{
+    if(e.target.id==='profile-photo-file'){
+      const file=e.target.files[0];
+      if(!file)return;
+      if(file.size>2*1024*1024){showToast('Ukuran foto maksimal 2MB','error');e.target.value='';return;}
+      const reader=new FileReader();
+      reader.onload=(ev)=>{$('#profile-preview').src=ev.target.result;};
+      reader.readAsDataURL(file);
+    }
+    if(e.target.id==='af-cover-file'){
+      const file=e.target.files[0];
+      if(!file)return;
+      if(file.size>3*1024*1024){showToast('Ukuran cover maksimal 3MB','error');e.target.value='';return;}
+      const reader=new FileReader();
+      reader.onload=(ev)=>{$('#af-cover-preview').src=ev.target.result;};
+      reader.readAsDataURL(file);
+    }
+  });
+
+  document.addEventListener('submit',async(e)=>{
+    if(e.target.id==='article-form'){
       e.preventDefault();
-      const title = $('#af-title').value.trim();
-      const data = {
-        title,
-        slug: slugify(title) + '-' + Date.now().toString(36),
-        excerpt: $('#af-excerpt').value.trim() || title,
-        content: $('#af-content').value.trim(),
-        cover_url: $('#af-cover').value.trim() || null,
-        category: $('#af-category').value,
-        tags: $('#af-tags').value.split(',').map(t => t.trim()).filter(Boolean),
-        status: $('#af-status').value,
-        read_time: readTime($('#af-content').value),
-        author_id: '4332c006-5019-4b0e-b1a3-cf7a5aea6e1c',
-        published_at: $('#af-status').value === 'published' ? new Date().toISOString() : null
-      };
-      try {
+      const submitBtn=e.target.querySelector('button[type="submit"]');
+      const orig=submitBtn.innerHTML;
+      submitBtn.disabled=true;submitBtn.innerHTML='⏳ Menyimpan...';
+      try{
+        let coverUrl=$('#af-cover').value.trim();
+        const fileInput=$('#af-cover-file');
+        if(fileInput.files[0]){
+          showToast('Upload cover...','info');
+          coverUrl=await api.uploadImage(fileInput.files[0],'article-images');
+        }
+        const title=$('#af-title').value.trim();
+        const data={
+          title,
+          slug:slugify(title)+'-'+Date.now().toString(36),
+          excerpt:$('#af-excerpt').value.trim()||title,
+          content:$('#af-content').value.trim(),
+          cover_url:coverUrl||null,
+          category:$('#af-category').value,
+          tags:$('#af-tags').value.split(',').map(t=>t.trim()).filter(Boolean),
+          status:$('#af-status').value,
+          read_time:readTime($('#af-content').value),
+          author_id:CONFIG.ADMIN_UID,
+          published_at:$('#af-status').value==='published'?new Date().toISOString():null
+        };
         await api.createArticle(data);
-        showToast('Artikel berhasil disimpan!', 'success');
+        showToast('Artikel berhasil disimpan!','success');
         e.target.reset();
-        state.articles = await api.getArticles();
+        $('#af-cover-preview').src='https://placehold.co/200x120?text=No+Cover';
+        state.articles=await api.getArticles();
         loadAdminLists();
-      } catch (err) { showToast('Gagal: ' + err.message, 'error'); }
+      }catch(err){showToast('Gagal: '+err.message,'error');}
+      finally{submitBtn.disabled=false;submitBtn.innerHTML=orig;}
     }
 
-    if (e.target.id === 'resource-form') {
+    if(e.target.id==='resource-form'){
       e.preventDefault();
-      const data = {
-        submenu: $('#rf-submenu').value,
-        title: $('#rf-title').value.trim(),
-        description: $('#rf-desc').value.trim(),
-        url: $('#rf-url').value.trim(),
-        icon: $('#rf-icon').value.trim() || '🔗',
-        order: state.resources.length + 1
+      const data={
+        submenu:$('#rf-submenu').value,
+        title:$('#rf-title').value.trim(),
+        description:$('#rf-desc').value.trim(),
+        url:$('#rf-url').value.trim(),
+        icon:$('#rf-icon').value.trim()||'🔗',
+        order:state.resources.length+1
       };
-      try {
+      try{
         await api.createResource(data);
-        showToast('Sumber materi disimpan!', 'success');
+        showToast('Sumber materi disimpan!','success');
         e.target.reset();
-        state.resources = await api.getResources();
+        state.resources=await api.getResources();
         loadAdminLists();
-      } catch (err) { showToast('Gagal: ' + err.message, 'error'); }
+      }catch(err){showToast('Gagal: '+err.message,'error');}
     }
 
-    if (e.target.id === 'app-form') {
+    if(e.target.id==='app-form'){
       e.preventDefault();
-      const data = {
-        name: $('#appf-name').value.trim(),
-        description: $('#appf-desc').value.trim(),
-        url: $('#appf-url').value.trim(),
-        icon: $('#appf-icon').value.trim() || '📱',
-        category: $('#appf-category').value.trim(),
-        status: $('#appf-status').value,
-        order: state.apps.length + 1
+      const data={
+        name:$('#appf-name').value.trim(),
+        description:$('#appf-desc').value.trim(),
+        url:$('#appf-url').value.trim(),
+        icon:$('#appf-icon').value.trim()||'📱',
+        category:$('#appf-category').value.trim(),
+        status:$('#appf-status').value,
+        order:state.apps.length+1
       };
-      try {
+      try{
         await api.createApp(data);
-        showToast('Aplikasi disimpan!', 'success');
+        showToast('Aplikasi disimpan!','success');
         e.target.reset();
-        state.apps = await api.getMyApps();
+        state.apps=await api.getMyApps();
         loadAdminLists();
-      } catch (err) { showToast('Gagal: ' + err.message, 'error'); }
+      }catch(err){showToast('Gagal: '+err.message,'error');}
     }
 
-    if (e.target.id === 'contact-form') {
+    if(e.target.id==='profile-form'){
       e.preventDefault();
-      showToast('Pesan terkirim! Terima kasih.', 'success');
+      const submitBtn=e.target.querySelector('button[type="submit"]');
+      const orig=submitBtn.innerHTML;
+      submitBtn.disabled=true;submitBtn.innerHTML='⏳ Menyimpan...';
+      try{
+        let photoUrl=$('#profile-photo-url').value;
+        const fileInput=$('#profile-photo-file');
+        if(fileInput.files[0]){
+          showToast('Upload foto...','info');
+          photoUrl=await api.uploadImage(fileInput.files[0],'profile-images');
+        }
+        const data={
+          name:$('#pf-name').value.trim(),
+          bio:$('#pf-bio').value.trim(),
+          photo_url:photoUrl,
+          expertise:$('#pf-expertise').value.split(',').map(s=>s.trim()).filter(Boolean),
+          social_links:{
+            instagram:$('#pf-instagram').value.trim(),
+            facebook:$('#pf-facebook').value.trim(),
+            youtube:$('#pf-youtube').value.trim(),
+            tiktok:$('#pf-tiktok').value.trim()
+          },
+          updated_at:new Date().toISOString()
+        };
+        if(state.profile?.id){
+          await api.updateProfile(state.profile.id,data);
+          state.profile={...state.profile,...data};
+        }else{
+          const ins=await sb.insert('profile',[data]);
+          state.profile=ins[0];
+        }
+        fileInput.value='';
+        $('#profile-photo-url').value=photoUrl;
+        renderFooterSocial();
+        showToast('✅ Profil berhasil disimpan!','success');
+      }catch(err){
+        console.error(err);
+        showToast('❌ Gagal: '+err.message,'error');
+      }finally{submitBtn.disabled=false;submitBtn.innerHTML=orig;}
+    }
+
+    if(e.target.id==='contact-form'){
+      e.preventDefault();
+      showToast('Pesan terkirim! Terima kasih.','success');
       e.target.reset();
     }
   });
 
-  // Logout
-  document.addEventListener('click', (e) => {
-    if (e.target.id === 'logout-btn') {
+  document.addEventListener('click',(e)=>{
+    if(e.target.id==='logout-btn'){
       sb.signOut();
-      $('#admin-toggle-text').textContent = 'Masuk';
-      showToast('Logout berhasil', 'info');
-      location.hash = '#/';
+      $('#admin-toggle-text').textContent='Masuk';
+      showToast('Logout berhasil','info');
+      location.hash='#/';
     }
   });
 
-  // Router
-  window.addEventListener('hashchange', render);
+  window.addEventListener('hashchange',render);
 }
 
-function openModal(id) { document.getElementById(id).classList.add('open'); }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-
-function updateReadingProgress() {
-  const bar = $('#reading-progress');
-  if (!bar.classList.contains('active')) return;
-  const h = document.documentElement.scrollHeight - window.innerHeight;
-  const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
-  bar.style.width = Math.min(100, pct) + '%';
-}
-
-/* ============================================
-   INIT
-   ============================================ */
-async function init() {
-  // Restore session
+async function init(){
   sb.restoreSession();
-  if (sb.session) $('#admin-toggle-text').textContent = 'Admin';
-
-  // Year
-  $('#footer-year').textContent = new Date().getFullYear();
-
-  // Bind events
+  if(sb.session)$('#admin-toggle-text').textContent='Admin';
+  $('#footer-year').textContent=new Date().getFullYear();
   bindEvents();
-
-  // Load data
   await loadAll();
-
-  // Render
   render();
-
-  console.log('%c✅ teachNwrite siap!', 'color:#0f766e;font-size:16px;font-weight:bold');
-  console.log('📊 Artikel:', state.articles.length, '| Materi:', state.resources.length, '| Apps:', state.apps.length);
+  console.log('%c✅ teachNwrite siap!','color:#0f766e;font-size:16px;font-weight:bold');
+  console.log('📊 Artikel:',state.articles.length,'| Materi:',state.resources.length,'| Apps:',state.apps.length);
 }
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded',init);
 </script>
 
 </body>
